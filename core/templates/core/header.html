@@ -1,16 +1,79 @@
 {% load static %}
 
-<h1 class="header">This is the header</h1>
+<header class="navbar">
+  <div class="container">
+    <div class="login-btn">
+      <a href="#">تسجيل الدخول</a>
+    </div>
+    
+    <nav class="nav-links">
+      <a href="#">تعلّم عن الموقع</a>
+      <a href="/books">كتب</a>
+      <a href="/courses">الدورات التدريبية</a>
+      <a href="/articles">المقالات</a>
+      <a href="#">الرئيسية</a>
+    </nav>
 
-<a href="/books" target="">Go to Books</a>
-<br>
-<br>
-<a href="/articles" target="">Go to Articles</a>
-<br>
-<br>
-<a href="/courses" target="">Go to Courses</a>
-<br>
-<br>
-<a href="/podcasts" target="">Go to Podcasts</a>
+     
+    <div class="logo">
+      <img src="images/photo_2026-05-07_16-52-46-removebg-preview.png" alt="ZAD Zyadotech Academy">
+    </div>
+
+    <!-- زر القائمة للموبايل -->
+    <div class="menu-toggle">&#9776;</div>
+  </div>
+</header>
+
+ 
+<!-- القائمة الجانبية للجوال -->
+<div class="mobile-menu">
+  <div class="close-btn">&times;</div>
+  
+  <a href="#">الرئيسية</a>
+  <a href="#">تعلّم عن الموقع</a>
+  <a href="/books">كتب</a>
+  <a href="/courses">الدورات التدريبية</a>
+  <a href="/articles">المقالات</a>
+  <div class="login-btn">
+    <a href="#">تسجيل الدخول</a>
+  </div>
+</div>
+
+
 
 <p>After</p>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.querySelector('.close-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    // 1. فتح القائمة بالضغط على الـ 3 شرطات
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.add('active');
+        });
+    }
+
+    // 2. إغلاق القائمة بالضغط على زر الـ X 
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.remove('active');
+        });
+    }
+
+    // 3. إغلاق القائمة إذا ضغط المستخدم خارجها في أي مكان بالصفحة
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+</script>
+ 
+
+
+
+ 
+ 
