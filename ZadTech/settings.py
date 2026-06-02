@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0+kfvbz-k+!y54^w!ppnr^$#p!t)$=4=qt2u#rj+dpm3@18e3_
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://zadtech.onrender.com', 
+    'zadtech.onrender.com', 
 ]
 
 
