@@ -24,7 +24,7 @@ html {
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
-    border: 2px solid red !important;  
+    /*border: 2px solid red !important; */ 
 }
 
 
