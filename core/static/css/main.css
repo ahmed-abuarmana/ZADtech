@@ -16,7 +16,16 @@ html {
 * {
     box-sizing: border-box !important; 
 }
- 
+
+
+
+.cards-container {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    border: 2px solid red !important;  
+}
 
 
 
