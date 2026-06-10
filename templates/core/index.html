@@ -1,0 +1,261 @@
+{% extends "core/layout.html" %} {% load static %} {% block head %}
+<link href="{% static 'core/css/main.css' %}" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Tajawal:wght@100;200;300;400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+{% endblock %} {% block body %}
+
+<div id="splash-screen" class="splash-overlay">
+  <div class="splash-card">
+    <div class="splash-content">
+      <div class="splash-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke="#f27a18"
+          stroke-width="4.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="14" y="14" width="72" height="72" rx="26" />
+
+          <path d="M34 44.5 C36 41, 44 41, 46 44.5" />
+
+          <path d="M54 44.5 C56 41, 64 41, 66 44.5" />
+
+          <path d="M34 54.5 h32 C66 69, 34 69, 34 54.5 Z" />
+        </svg>
+      </div>
+      <h2 class="splash-quote">
+        {{ random_quote.text }}
+        {% if random_quote.author %}
+        <span class="splash-author">- {{ random_quote.author }}</span>
+        {% endif %}
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="menu-overlay" id="menu-overlay"></div>
+
+<main class="hero-section">
+  <div class="Image">
+    <img src="{% static 'core/images/welcome-section.jpg' %}" alt="" />
+  </div>
+
+  <div class="overlay">
+    <div class="container">
+      <div class="hero-text">
+        <h1>ابدأ رحلتڪ المجانـيـة</h1>
+        <h1>معنا في التعليم</h1>
+      </div>
+      <div class="hero-buttons">
+        <a href="#banner-section" class="btn-primary">ابدأ الآن</a>
+        <a href="#" class="btn-secondary">استكمال متابعة</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="stats-container">
+  <div class="stat-card fade-in">
+    <h3>10k +</h3>
+    <p>حصلوا على وظائف عن بعد من خلال الدورات</p>
+  </div>
+
+  <div class="stat-card fade-in">
+    <h3>7 +</h3>
+    <p>مهارة جديدة يمكنك تعلمها</p>
+  </div>
+
+  <div class="stat-card fade-in">
+    <h3>10k +</h3>
+    <p>شخص اكتسب الخبرة بشكل مجاني</p>
+  </div>
+</div>
+
+<div class="banner-section" id="banner-section">
+  <div class="banner-container">
+    <div class="info-side">
+      <p class="main-text">
+        جميع المواد التعليمية مجاناً بالكامل، مما يساعدني على التعلم بسهولة
+        ويسر<br />
+        توفير المحتوى دون أي رسوم أتاح لي تطوير مهاراتي بشكل فعال
+      </p>
+      <button class="action-btn">ابدأ الآن</button>
+    </div>
+
+    <div class="logo-side">
+      <img
+        src="{% static 'core/images/logo-side.png' %}"
+        alt="Zad Tech Logo"
+        class="logo-img"
+      />
+    </div>
+  </div>
+</div>
+
+<section class="courses-section">
+  <div class="section-header">
+    <h2 class="section-title">الدورات المتداولة</h2>
+    <a href="#" class="view-all">عرض الكل</a>
+  </div>
+
+  <div class="cards-container">
+    <div class="course-card fade-in">
+      <div class="image-box">
+        <img src="{% static 'core/images/gallery-1.png' %}" alt="دورة" />
+      </div>
+      <div class="card-details">
+        <div class="info-box title">تصميم جرافيك</div>
+        <div class="info-box rating">من التعليقات 150</div>
+        <div class="info-box price">3⭐️</div>
+      </div>
+    </div>
+
+    <div class="course-card fade-in">
+      <div class="image-box">
+        <img src="{% static 'core/images/gallery-2.png' %}" alt="دورة" />
+      </div>
+      <div class="card-details">
+        <div class="info-box title">لغات البرمجة</div>
+        <div class="info-box rating">من التعليقات 150</div>
+        <div class="info-box price">5⭐️</div>
+      </div>
+    </div>
+
+    <div class="course-card fade-in">
+      <div class="image-box">
+        <img src="{% static 'core/images/gallery-3.png' %}" alt="دورة" />
+      </div>
+      <div class="card-details">
+        <div class="info-box title">برمجة مواقع ويب</div>
+        <div class="info-box rating">من التعليقات 150</div>
+        <div class="info-box price">5⭐️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-image-section">
+  <div class="features-container">
+    <div class="image-wrapper">
+      <img
+        src="{% static 'core/images/features.png' %}"
+        alt="Features Person"
+        class="main-feature-img"
+      />
+
+      <div class="feature-point top-right fade-in">
+        <span class="feature-text">⭐️ نقدم لك تعليم مجاني بالكامل</span>
+      </div>
+
+      <div class="feature-point middle-right fade-in">
+        <span class="feature-text">⭐️ تعرف على المبدعين من حولك</span>
+      </div>
+
+      <div class="feature-point top-left fade-in">
+        <span class="feature-text">⭐️ العديد من الأنشطة العلمية والعملية</span>
+      </div>
+
+      <div class="feature-point bottom-left fade-in">
+        <span class="feature-text">⭐️ انضم إلينا وكن أفضل المؤثرين</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="instructors-section">
+  <h6 class="section-title1">أشهر المدربين</h6>
+
+  <div class="cards-container">
+    <div class="instructor-card fade-in">
+      <div class="image-wrapper1">
+        <img src="{% static 'core/images/img1.png' %}" alt="م. محمود زايد" />
+        <button class="preview-btn">معاينة</button>
+      </div>
+      <div class="card-content">
+        <h5>م. داليا كساب</h5>
+        <p>
+          فلسطينية الجنسية، حاصلة على بكالوريوس هندسة أنظمة الحاسوب مختصة في
+          مجال تصميم واجهات المستخدم للمواقع والتطبيقات
+        </p>
+      </div>
+    </div>
+
+    <div class="instructor-card fade-in">
+      <div class="image-wrapper1">
+        <img src="{% static 'core/images/img1.png' %}" alt="م. روان عثمان" />
+        <button class="preview-btn">معاينة</button>
+      </div>
+      <div class="card-content">
+        <h5>م. روان عثمان</h5>
+        <p>
+          لبنانية الجنسية، حاصلة على بكالوريوس هندسة أنظمة الحاسوب مختصة في مجال
+          تصميم واجهات المستخدم للمواقع والتطبيقات
+        </p>
+      </div>
+    </div>
+
+    <div class="instructor-card fade-in">
+      <div class="image-wrapper1">
+        <img src="{% static 'core/images/img2.png' %}" alt="م. داليا كساب" />
+        <button class="preview-btn">معاينة</button>
+      </div>
+      <div class="card-content">
+        <h5>م. محمود زايد</h5>
+        <p>
+          لبناني الجنسية، حاصل على بكالوريوس هندسة أنظمةالحاسوب مختص في مجال
+          تصميم واجهات المستخدم للمواقع والتطبيقات
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // الانتظار حتى يتم تحميل الصفحة بالكامل
+  window.addEventListener("DOMContentLoaded", () => {
+    const splashScreen = document.getElementById("splash-screen");
+
+    // تحديد وقت الظهور: 3000 ميلي ثانية تعني 3 ثوانٍ بالظبط
+    setTimeout(() => {
+      if (splashScreen) {
+        splashScreen.classList.add("splash-hidden");
+      }
+    }, 3000);
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    },
+  );
+
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+
+{% endblock body %}
