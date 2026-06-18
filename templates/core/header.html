@@ -3,22 +3,23 @@
 <header class="navbar">
   <div class="container">
     <div class="login-btn">
-      <a href="#">تسجيل الدخول</a>
+      <a href="/login">تسجيل الدخول</a>
     </div>
     
     <nav class="nav-links">
-      <a href="#">تعلّم عن الموقع</a>
+      <a href="/about">تعلّم عن الموقع</a>
       <a href="/books">كتب</a>
       <a href="/courses">الدورات التدريبية</a>
       <a href="/articles">المقالات</a>
-      <a href="#">الرئيسية</a>
+      <a href="/podcasts">بودكاست</a>
+      <a href="/">الرئيسية</a>
     </nav>
 
-     
+  <a href="/">
     <div class="logo">
       <img src="{% static 'core/images/logo.png' %}" alt="ZAD Zyadotech Academy">
     </div>
-
+  </a>
     <!-- زر القائمة للموبايل -->
     <div class="menu-toggle">&#9776;</div>
   </div>
@@ -29,19 +30,16 @@
 <div class="mobile-menu">
   <div class="close-btn">&times;</div>
   
-  <a href="#">الرئيسية</a>
-  <a href="#">تعلّم عن الموقع</a>
+  <a href="/">الرئيسية</a>
+  <a href="/about">تعلّم عن الموقع</a>
   <a href="/books">كتب</a>
   <a href="/courses">الدورات التدريبية</a>
   <a href="/articles">المقالات</a>
+  <a href="/podcasts">بودكاست</a>
   <div class="login-btn">
-    <a href="#">تسجيل الدخول</a>
+    <a href="/login">تسجيل الدخول</a>
   </div>
 </div>
-
-
-
- 
 
 <script>
     const menuToggle = document.querySelector('.menu-toggle');
