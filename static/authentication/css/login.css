@@ -1,3 +1,185 @@
 body {
-    color: chocolate;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    overflow: hidden;
+}
+
+.hidden-checkbox { display: none; }
+
+.card-wrapper {
+    width: 700px;
+    padding: 3px; 
+}
+
+  
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+}
+.form-container{
+    position: relative;
+    z-index: 2;
+}
+ .logo {
+    width: 280px;         
+    height: auto;        
+    display: block;      
+    margin: 0 auto;       
+    margin-bottom: -100px;  
+    margin-top: -90px;
+}
+
+p {
+    font-size: 19px;  
+    line-height: 1.5;  
+    font-family: 'Almarai', sans-serif;
+}
+
+ 
+.signup-card { display: none; }
+
+#toggle-view:checked ~ .card-wrapper .login-card { display: none; }
+#toggle-view:checked ~ .card-wrapper .signup-card { display: block; }
+
+ 
+input {
+    display: block;
+    width: 45%;
+    box-sizing: border-box;
+    margin: 15px 0;
+    padding:  10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin:  0 auto 25px;
+     font-family: 'Almarai', sans-serif;
+     position: relative;  
+    z-index: 999;      
+    cursor: text;
+     
+}
+
+.btn {
+    width: 45%;
+    padding: 10px 12px;
+    background-color: #1a3a6a;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 30px;
+     font-family: 'Almarai', sans-serif;
+}
+
+.link { 
+    color: #f1c40f; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-decoration: underline;
+     
+}
+
+.skip {
+     margin-top: 15px; 
+     color: #777; 
+     font-size: 16px; 
+     cursor: pointer; 
+     margin-top: 50px;
+     color: #000000;
+      font-family: 'Almarai', sans-serif;
+     text-decoration: underline;
+    }
+
+.bg-container {
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  
+    overflow: hidden;  
+}
+.blue-shape{
+    position: absolute;
+    left: -230px;
+    top: -350px;
+    width: 400px;
+    height: 700px;
+    background-color: #3a6c9e;
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: 1;
+}
+
+ 
+.yellow-shape{
+    position: absolute;
+    right: -120px;
+    bottom: -580px;
+    width: 700px;
+    height: 700px;
+    background: #f7c443;
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: 1;
+}
+
+
+/*انميشن*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);  
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+}
+
+ 
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+
+ 
+
+
+/*تنسيق الايبادات*/
+@media (max-width: 768px) {
+    .card-wrapper {
+        width: 90%;  
+    }
+    input, .btn {
+        width: 80%;  
+    }
+    .blue-shape, .yellow-shape {
+        display: none; 
+    }
+}
+
+/*تنسيق الجوال*/
+@media (max-width: 480px) {
+    .card-wrapper { 
+        width: 95%; 
+         
+    }
+
+    .blue-shape, .yellow-shape {
+        display: block !important;  
+        width: 200px !important;    
+        height: 200px !important;
+        filter: blur(30px) !important;  
+    }
+
+    .blue-shape { left: -50px; top: -50px; }
+    .yellow-shape { right: -50px; bottom: -50px; }
 }
