@@ -2,10 +2,203 @@
 {% load static %}
 
 {% block head %}
-    <link href="{% static 'articles/css/articles.css' %}" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadtech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="{% static 'articles/css/articles.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}    
-<h1>Articles - red</h1>
+ <div class="scene">
+    <img src="images/artical image1jpg.jpg" alt="" class="book-img">
+
+    <div class="container-boxes">
+        <div class="item-box box1"> <span>كتب فلسفة</span></div>
+        <div class="item-box box2"><span>كتب علمية</span></div>
+        <div class="item-box box3"><span>العديد من الروايات</span></div>
+        <div class="item-box box4"><span>أكثر من 4000 مقال</span></div>
+        <div class="item-box box5"><span>أكثر من 2000 كتاب</span></div>
+    </div>
+
+    <div class="container-button">
+         <a href="Publish an article.html" class="button">كتابة مقال جديد</a>
+    </div>
+</div>
+
+
+
+
+<section class="recent-posts"> 
+  <div class="section-header">
+    <h2>المنشور مؤخرًا</h2>
+    <a href="#" class="view-all">عرض الكل</a>
+  </div>
+
+  <div class="cards-container">
+    <div class="card fade-in" onclick="selectService('artical1')">
+      <img src="images/artical 1.jpg" alt="مقالة أفكارك ومعتقداتك">
+      <h3>مقالة أفكارك ومعتقداتك</h3>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="card fade-in" onclick="selectService('artical2')">
+      <img src="images/artical 2.jpg" alt="مقالة القدرة على التكيف">
+      <h3>مقالة القدرة على التكيف</h3>
+      <div class="stars">★★☆☆☆</div>
+    </div>
+
+    <div class="card fade-in" onclick="selectService('artical3')">
+      <img src="images/artical 3.jpg" alt="مقالة التردد الوقتي">
+      <h3>مقالة التردد الوقتي</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+ <section class="related-posts">
+  <h2 class="related-section-title">ذات صلة</h2>
+   
+  <div class="related-cards-wrapper">
+    <article class="related-card fade-in">
+      <img src="images/maqal 1.jpg" alt="صورة المقال">
+      <div class="related-card-content">
+         <div class="card-header">
+       <h3 class="card-title">مقالة عن الصمت</h3>
+       <div class="stars">★★★★★</div>
+         </div>
+        <p>عالم يضج بالضجيج المتواصل وسياق الكلمات الذي لا ينتهي. يأتي هذا المقال ليعيد اكتشاف "الصمت" ليس كغياب للصوت، بل كحضور طاغٍ للذات.</p>
+        <p>إتيكيت الصمت: متى يكون الصمت رقيّاً، ومتى يكون ضرورة؟</p>
+        <div class="related-card-actions">
+          <button class="btn-primary" onclick="selectService('silence', 'article')">عرض المقال</button>
+          <a href="Publish an article.html" class="btn-secondary">كتابة مقال اخر</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="related-card fade-in">
+      <img src="images/maqal 2.jpg" alt="صورة المقال">
+      <div class="related-card-content">
+         <div class="card-header">
+       <h3 class="card-title">مقالة عن الأدب</h3>
+       <div class="stars">★★★★★</div>
+         </div>
+        <p>الأدب ليس مجرد كلمات مرصوفة على صفحات، بل هو شريان الحياة الذي يربطنا بماضينا، ويعكس حاضرنا، ويرسم ملامح مستقبلنا. إنه المرآة التي نرى فيها أنفسنا ونتأمل فيها الآخرين، والنافذة التي نطل منها على عوالم لم نزرها بعد.</p>
+        <p>كيف يحررنا الأدب من قيود الواقع، ليطير بنا إلى عوالم خيالية ساحرة، ويقدم لنا الجمال في أبهى صوره اللغوية والفنية.</p>
+        <div class="related-card-actions">
+          <button class="btn-primary" onclick="selectService('literature', 'article')">عرض المقال</button>
+          <a href="Publish an article.html" class="btn-secondary">كتابة مقال اخر</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+
+
+<section class="authors-section">
+  <h2 class="section-title">أشهر المؤلفين</h2>
+  <div class="authors-grid">
+    
+    <div class="author-card fade-in">
+      <img src="images/img1.jpg" alt="أحمد نادر">
+      <h3>أحمد نادر</h3>
+      <p>سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
+      <button class="btn-view" onclick="localStorage.setItem('activeAuthorId', 1); window.location.href='Author Profile.html';">معاينة</button>
+    </div>
+
+    <div class="author-card fade-in">
+      <img src="images/img2.jpg" alt="غسان كنفاني">
+      <h3>غسان كنفاني</h3>
+      <p>سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
+      <button class="btn-view" onclick="localStorage.setItem('activeAuthorId', 2); window.location.href='Author Profile.html';">معاينة</button>
+    </div>
+
+    <div class="author-card fade-in">
+      <img src="images/img3.jpg" alt="محمود درويش">
+      <h3>محمود درويش</h3>
+      <p>سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
+      <button class="btn-view" onclick="localStorage.setItem('activeAuthorId', 3); window.location.href='Author Profile.html';">معاينة</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+    function selectService(id, type = 'article') {
+        // حفظ المعرف والنوع في المتصفح لاستخدامهما في صفحة العرض
+        localStorage.setItem('selectedArticle', id);
+        localStorage.setItem('contentType', type);
+        
+        // الانتقال دائماً لصفحة عرض المقالات
+        window.location.href = 'View Article.html'; 
+    }
+</script>
+
+
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.querySelector('.close-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    //   فتح القائمة بالضغط على الـ 3 شرطات
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.add('active');
+        });
+    }
+
+    //    اغلاق القائمة بالضغط على x
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.remove('active');
+        });
+    }
+
+    //  إغلاق القائمة إذا ضغط المستخدم خارجها في أي مكان بالصفحة
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+</script>
+ 
+<script>
+  //أنميشن
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 
 {% endblock body %}
