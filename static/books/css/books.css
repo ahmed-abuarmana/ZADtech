@@ -1,3 +1,693 @@
-body {
-    color: blue;
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;  
+    width: 100% !important;
+    background: linear-gradient(to right, #bbd6e9 0%, #d4e4f1 50%, #f4f8fb 80%, #f0f5fa 85%, #f0f5fa 100%);
 }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+* {
+    box-sizing: border-box !important;  
+}
+
+
+.search-section {
+    
+    padding: 20px 0;            
+    display: flex;
+    justify-content: center;   
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;  
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 60px;
+    margin: 20px auto;
+}
+.search-container:focus-within {
+    border: 1px solid #000;  
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    background: transparent;
+}
+.search-input::placeholder {
+    color: #000 !important;
+    opacity: 1;  
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000;
+    
+}
+
+
+
+
+
+
+
+/*تنسيق الجوال*/
+@media (max-width: 600px) {
+    .search-section {
+        padding-top: 5px !important;  
+        margin-top: -10px !important;  
+    }
+    .search-container {
+        max-width: 90%;        
+        height: 50px;        
+        margin: 10px auto;    
+        padding: 5px 10px;    
+        margin-top: 30px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .search-input {
+        font-size: 14px;     
+    }
+    
+    .search-btn svg {
+        width: 20px;           
+        height: 20px;
+    }
+     
+}
+
+/*تنسيق الايباد*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    .search-container {
+        max-width: 80%;        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+  margin-top: -10px;
+  margin-left: 431px;
+}
+
+.tab-btn {
+  border: 1px solid #777;
+  background: #fff;
+  color: #000000;
+  padding: 15px 45px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.tab-btn.active {
+  background: #1f4b8c;
+  color: #fff;
+  border-color: #1e3a8a;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+}
+.add-btn {
+  background: #e9efff;
+  color: #1f4b8c;
+  border: 1px solid #1f4b8c;
+  font-weight: 500;
+  font-family: 'Tajawal', sans-serif;
+  padding: 15px 20px;
+  font-weight: 500;
+  width: 180px;       
+  text-align: center;
+  text-decoration: none;
+}
+
+.add-btn:hover {
+  background: #dbe4ff;
+}
+.add-btn .plus {
+  color: #224c89;  
+}
+
+/* للجوال */
+@media (max-width: 767px) {
+  .tabs {
+    flex-direction: row;        
+    gap: 3px;                 
+    margin-left: 10px;            
+  }
+
+  .tab-btn, .add-btn {
+    padding: 10px 17px;        
+    font-size: 13px;          
+    border-radius: 20px;   
+    margin-left: 7px;   
+  }
+  .add-btn {
+    width: 150px;        
+    text-align: center; 
+    padding: 10px 12px;  
+  }
+
+}
+
+/* للآيباد */
+@media (min-width: 768px) and (max-width: 1024px) {
+   .tabs {
+    display: flex;
+    justify-content: center;    
+    align-items: flex-start;    
+    flex-wrap: nowrap;          
+    margin-left: 0;            
+    margin-top: 10px;           
+    gap: 12px;                
+  }
+
+  .tab-btn, .add-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  .add-btn .plus {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);  
+  gap: 35px 0;  
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.card {
+  width: 270px;
+  height: 475px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-top: -50px; 
+}
+
+ 
+.image-wrapper {
+    position: relative;  
+    width: 100%;
+    height: 280px;  
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  border-radius: 12px;
+}
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;  
+    height: 70px;
+    pointer-events: none;  
+    fill: none;
+    stroke: #eee;
+    stroke-width: 6;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 10px 15px;
+    margin-top: -15px;
+}
+
+.stars-container {
+    display: flex;
+    gap: 1px;  
+    margin-top: -4px;
+}
+
+.star-icon {
+    fill: #f5b325;  
+}
+
+.star-empty {
+    fill: #ccc;  
+    stroke: #ccc;
+}
+
+.card-header h3 {
+  margin: 10px 0 15px;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+}
+
+.card p {
+  font-size: 13px;
+  color: #666;
+  padding: 0 10px;
+  line-height: 1.5;
+  font-family: 'Tajawal', sans-serif;
+  width: 100%;
+  text-align: right;
+  margin-top: -25px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.details-btn {
+    display: block;  
+    width: 65%; 
+    margin: 15px auto;  
+    padding: 10px;
+    background-color: #1f4b8c;;  
+    color: white;  
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-family: 'Tajawal', sans-serif;
+    margin-top: -5px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.section-title {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  padding-right: 10px;
+  font-family: 'Tajawal', sans-serif;
+  margin-right: 305px;
+  margin-top: 60px;
+}
+.section-title2 {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  margin: 40px 60px 20px 0;  
+  padding-right: 10px;
+  font-family: 'Tajawal', sans-serif;
+  margin-right: 305px;
+  margin-top: -15px;
+}
+
+
+.book-title {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  padding-right: 10px;
+  font-family: 'Tajawal', sans-serif;
+  margin-right: 305px;
+  margin-top: 60px;
+}
+.book-title2 {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  margin: 40px 60px 20px 0;  
+  padding-right: 10px;
+  font-family: 'Tajawal', sans-serif;
+  margin-right: 305px;
+  margin-top: -15px;
+}
+
+ 
+@media (max-width: 767px) {
+  .cards-container {
+    grid-template-columns: 1fr;  
+    justify-content: center;    
+    gap: 80px;                  
+  }
+
+  .card {
+    width: 85%;  
+    margin: 0 auto;  
+    margin-top: -50px;
+  }
+  .section-title,
+.section-title2,
+.book-title,
+.book-title2 {
+  text-align: right;
+  margin-right: 20px;
+}
+
+}
+
+
+
+/* تنسيق الايباد */
+@media (min-width: 768px) and (max-width: 1024px) {
+   .cards-container {
+    justify-content: center;  
+    gap: 0;     
+  }
+  .card {
+    width: 95%;  
+  }
+
+   
+  .section-title,
+  .section-title2,
+  .book-title,
+  .book-title2 {
+    margin-right: 40px; 
+    font-size: 18px;   
+  }
+}
+
+
+
+
+
+
+.welcome-section {
+  text-align: center;              
+  font-family: 'Tajawal', sans-serif;
+  margin-top: 0px;
+  padding-bottom: 180px;
+  padding-top: 80px;
+     background-image: 
+  radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px), 
+  linear-gradient(to right, 
+      #e8ebee 0%,     
+      #f0f0f0 85%,   
+      #fffdf0 100%    
+  );
+
+}
+.welcome-text {
+  color: #f5b325;
+  font-size: 26px;
+  font-weight: 500;
+  font-family: 'Tajawal', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;              
+  right: 17px;                 
+  width: 155px;              
+  height: 8px;              
+  background-color: #1f4b8c;  
+  border-radius: 2px;
+  z-index: -1;   
+}
+
+ 
+
+.emoji-icon svg {
+  width: 33px;                      
+  height: 33px;
+  vertical-align: middle;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;                       
+  margin-top: 3px;
+  flex-direction: row-reverse;
+  margin-right: 5px;
+}
+
+.btn-outline {
+  background: #f0f0f0;
+  color: #1f4b8c;
+  border: 1.5px solid #1f4b8c;
+  padding: 10px 35px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+
+
+.btn-primary {
+  background: #1f4b8c;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.btn-primary:hover {
+  background: #163b6e;
+}
+
+
+/* للجوال */
+@media (max-width: 576px) {
+  .welcome-section {
+    padding-top: 50px;
+    padding-bottom: 120px;
+  }
+
+  .welcome-text {
+    font-size: 18px;    
+    gap: 5px;
+  }
+
+  .emoji-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .highlight::after {
+    right: 10px;
+    width: 120px;           
+    height: 6px;
+  }
+
+  .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;                       
+  margin-top: 3px;
+  flex-direction: row-reverse;
+  margin-right: 5px;
+}
+
+.btn-outline {
+  background: #f0f0f0;
+  color: #1f4b8c;
+  border: 1.5px solid #1f4b8c;
+  padding: 10px 25px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+
+
+.btn-primary {
+  background: #1f4b8c;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-input {
+    font-size: 14px;
+  }
+}
+
+ 
+
+/* واجهة اضافة تعليق*/ 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 450px;
+    text-align: right;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+ 
+.modal-input {
+    width: 100%;
+    border: none;              
+    padding: 15px 0;
+    font-size: 16px;
+    font-family: 'Tajawal', sans-serif;
+    outline: none;              
+    background: transparent;   
+    display: block;
+    margin-bottom: 5px;
+}
+
+ 
+input[type="email"].modal-input {
+    border-bottom: 1px solid #ccc; 
+}
+
+ 
+textarea.modal-input {
+    border-bottom: none !important;
+}
+
+ 
+.modal-input::placeholder {
+   /* color: #999;*/
+   font-weight: 400;
+   color: #000000;
+   font-size: 20px;
+}
+
+ 
+.modal-content h3 {
+    margin-top: 10px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+ 
+.send-btn {
+    background-color: #2f588c;  
+    color: white;             
+    border: none;              
+    padding: 10px 25px;       
+    border-radius: 10px;       
+    font-size: 16px;          
+    cursor: pointer;          
+    font-family: 'Tajawal', sans-serif;
+    transition: background-color 0.3s ease;
+    display: block;           
+    margin-top: 5px;
+    margin-right: auto;       
+    margin-left: 0;           
+}
+
+.send-btn:hover {
+    background-color: #254670;  
+}
+
+.modal.show {
+    display: flex !important;
+}
+
+
+
+
+
+/*انميشن*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);  
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+}
+
+ 
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);  
+}
+
+
+
+ 
