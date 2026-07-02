@@ -1,6 +1,12 @@
 from django.shortcuts import render
+from .models import Category
 
-# Create your views here.
+
+
 
 def courses(request):
-    return render(request, "courses/courses.html")
+    categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, "courses/courses.html", context)

@@ -25,7 +25,7 @@ urlpatterns = [
     path('about/', about, name='about'),
 
     path('articles/', include("Articles.urls")),
-    path('podcasts/', include("Podcast.urls")),
+    # path('podcasts/', include("Podcast.urls")),
     path('books/', include("Books.urls")),
     path('courses/', include("Courses.urls")),
 ]

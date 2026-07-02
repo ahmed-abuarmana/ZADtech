@@ -39,19 +39,19 @@
 
   <div class="cards-container">
     <div class="card fade-in" onclick="selectService('artical1')">
-      <img src="images/artical 1.jpg" alt="مقالة أفكارك ومعتقداتك">
+      <img src="{% static 'core/images/artical 1.jpg' %}" alt="مقالة أفكارك ومعتقداتك">
       <h3>مقالة أفكارك ومعتقداتك</h3>
       <div class="stars">★★★★☆</div>
     </div>
 
     <div class="card fade-in" onclick="selectService('artical2')">
-      <img src="images/artical 2.jpg" alt="مقالة القدرة على التكيف">
+      <img src="{% static 'core/images/artical 2.jpg' %}" alt="مقالة القدرة على التكيف">
       <h3>مقالة القدرة على التكيف</h3>
       <div class="stars">★★☆☆☆</div>
     </div>
 
     <div class="card fade-in" onclick="selectService('artical3')">
-      <img src="images/artical 3.jpg" alt="مقالة التردد الوقتي">
+      <img src="{% static 'core/images/artical 3.jpg' %}"lt="مقالة التردد الوقتي"> a
       <h3>مقالة التردد الوقتي</h3>
       <div class="stars">★★★★★</div>
     </div>
@@ -69,7 +69,7 @@
    
   <div class="related-cards-wrapper">
     <article class="related-card fade-in">
-      <img src="images/maqal 1.jpg" alt="صورة المقال">
+      <img src="{% static 'core/images/maqal 1.jpg' %}" alt="صورة المقال">
       <div class="related-card-content">
          <div class="card-header">
        <h3 class="card-title">مقالة عن الصمت</h3>
@@ -85,7 +85,7 @@
     </article>
 
     <article class="related-card fade-in">
-      <img src="images/maqal 2.jpg" alt="صورة المقال">
+      <img src="{% static 'core/images/maqal 2.jpg' %}" alt="صورة المقال">
       <div class="related-card-content">
          <div class="card-header">
        <h3 class="card-title">مقالة عن الأدب</h3>
@@ -111,21 +111,21 @@
   <div class="authors-grid">
     
     <div class="author-card fade-in">
-      <img src="images/img1.jpg" alt="أحمد نادر">
+      <img src="{% static 'core/images/img1.jpg' %}" alt="أحمد نادر">
       <h3>أحمد نادر</h3>
       <p>سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
       <button class="btn-view" onclick="localStorage.setItem('activeAuthorId', 1); window.location.href='Author Profile.html';">معاينة</button>
     </div>
 
     <div class="author-card fade-in">
-      <img src="images/img2.jpg" alt="غسان كنفاني">
+      <img src="{% static 'core/images/img2.jpg' %}" alt="غسان كنفاني">
       <h3>غسان كنفاني</h3>
       <p>سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
       <button class="btn-view" onclick="localStorage.setItem('activeAuthorId', 2); window.location.href='Author Profile.html';">معاينة</button>
     </div>
 
     <div class="author-card fade-in">
-      <img src="images/img3.jpg" alt="محمود درويش">
+      <img src="{% static 'core/images/img3.jpg' %}" alt="محمود درويش">
       <h3>محمود درويش</h3>
       <p>سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
       <button class="btn-view" onclick="localStorage.setItem('activeAuthorId', 3); window.location.href='Author Profile.html';">معاينة</button>
