@@ -96,7 +96,7 @@ class Courses(models.Model):
     teacher_name = models.CharField(max_length=100, verbose_name="Teacher Name")
     channel_name = models.CharField(max_length=100, blank=True, verbose_name="Channel Name")
 
-    # ------------------------ التصنيفات (مرتبطة بقاعدة البيانات) ------------------------
+
     # ✅ التعديل: استخدام ForeignKey بدلاً من CharField
     category = models.ForeignKey(
         Category,
@@ -144,7 +144,7 @@ class Courses(models.Model):
         default=0.0,
         verbose_name="Rating"
     )
-    status = models.BooleanField(default=True, verbose_name="Active")
+    status = models.BooleanField(default=False, verbose_name="Is Active?")
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
 

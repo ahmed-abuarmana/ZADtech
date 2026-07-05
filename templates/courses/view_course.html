@@ -1,0 +1,65 @@
+{% extends "core/layout.html" %}
+{% load static %}
+
+{% block head %}
+<title>{{ course.title }}</title>
+<link href="{% static 'courses/css/view_course.css' %}" rel="stylesheet">
+{% endblock head %}
+
+{% block body %}
+
+<div class="course-container" dir="rtl">
+
+    {% if course.thumbnail %}
+        <img class="course-image" src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
+    {% endif %}
+
+    <h1>{{ course.title }}</h1>
+
+    <div class="course-info">
+
+        <p><strong>اسم المدرس:</strong> {{ course.teacher_name }}</p>
+
+        <p><strong>القناة:</strong> {{ course.channel_name }}</p>
+
+        <p><strong>التصنيف:</strong> {{ course.category.name_ar }}</p>
+
+        <p><strong>المجال:</strong> {{ course.field.name_ar }}</p>
+
+        <p><strong>اللغة:</strong> {{ course.language }}</p>
+
+        <p><strong>المدة:</strong> {{ course.duration }}</p>
+
+        <p><strong>المستوى:</strong> {{ course.get_level_display }}</p>
+
+        <p><strong>التقييم:</strong> {{ course.rating }}/5</p>
+
+        <p>
+            <strong>مجاني:</strong>
+            {% if course.is_free %} نعم {% else %} لا {% endif %}
+        </p>
+
+        <p>
+            <strong>شهادة:</strong>
+            {% if course.certificate %} نعم {% else %} لا {% endif %}
+        </p>
+
+        <p>
+            <strong>الحالة:</strong>
+            {% if course.status %} نشط {% else %} غير نشط {% endif %}
+        </p>
+
+    </div>
+
+    <div class="description">
+        <h3>الوصف</h3>
+        <p>{{ course.description }}</p>
+    </div>
+
+    <div class="course-link">
+        <a href="{{ course.link }}" target="_blank">بداية الدورة</a>
+    </div>
+
+</div>
+
+{% endblock body %}
