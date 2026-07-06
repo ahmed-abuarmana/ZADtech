@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadtech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/View Article.css" />
+</head>
+<body> 
+     <div class="page-container">
+    
+
+      <nav class="sidebar">
+
+        <h3>دورات تدريبية ذات صلة</h3>
+
+        <div class="article-item" onclick="loadArticle('health')">دورة تصميم مواقع فقط من الصفر
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <g id="Play_Button" transform="translate(0.5 0.5)">
+    <circle cx="31" cy="31" r="30" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M25,20 L45,31.5 L25,43 Z" fill="#000"/>
+  </g>
+</svg>
+
+
+
+    </span>
+        </div>
+
+        <div class="article-item" onclick="loadArticle('protein')">دورة تصميم تطبيقات فقط من الصفر
+             <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <g id="Play_Button" transform="translate(0.5 0.5)">
+    <circle cx="31" cy="31" r="30" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M25,20 L45,31.5 L25,43 Z" fill="#000"/>
+  </g>
+</svg>
+
+
+    </span>
+        </div>
+
+        <div class="article-item" onclick="loadArticle('poetry')">دورة تصميم جرافيك للمبتدئين
+             <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <g id="Play_Button" transform="translate(0.5 0.5)">
+    <circle cx="31" cy="31" r="30" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M25,20 L45,31.5 L25,43 Z" fill="#000"/>
+  </g>
+</svg>
+
+
+    </span>
+        </div>
+
+        <div class="article-item" onclick="loadArticle('psychology')">دورة ووردبريس للمجترفين فيديو واحد
+             <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <g id="Play_Button" transform="translate(0.5 0.5)">
+    <circle cx="31" cy="31" r="30" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M25,20 L45,31.5 L25,43 Z" fill="#000"/>
+  </g>
+</svg>
+
+
+    </span>
+        </div>
+
+
+        <div class="article-item" onclick="loadArticle('ai')">تعلم صناعة الإعلانات الممولة بأقل من ساعة
+             <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <g id="Play_Button" transform="translate(0.5 0.5)">
+    <circle cx="31" cy="31" r="30" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M25,20 L45,31.5 L25,43 Z" fill="#000"/>
+  </g>
+</svg>
+
+
+    </span>
+        </div>
+
+
+        <div class="article-item" onclick="loadArticle('learn')">بتحلم تصير مدير تسويق إعلانات ومش عارف تبلش
+             <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <g id="Play_Button" transform="translate(0.5 0.5)">
+    <circle cx="31" cy="31" r="30" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M25,20 L45,31.5 L25,43 Z" fill="#000"/>
+  </g>
+</svg>
+
+
+    </span>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+    <main class="main-content">
+           
+
+        <div class="back-wrapper">
+    <a href="javascript:history.back()" class="back-link" id="back-button">
+        <svg class="back-icon" viewBox="0 0 42 42">
+            <path d="M0,27.858,11.3,16.391a3.529,3.529,0,0,0,0-4.924L0,0" transform="translate(15.656 7.071)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </svg>
+        <span class="back-text">عودة</span>
+    </a>
+</div>
+  
+            <a id="video-link" href="رابط_الفيديو_هنا" target="_blank" style="display: block; position: relative; max-width: 600px; margin-bottom: 20px;">
+    <img id="display-image" class="display-image" src="images/دورة تدريبية.jpg" alt="صورة الكتاب" style="margin-bottom: 0;">
+    
+    <span class="play-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 63px; height: 63px; z-index: 10; pointer-events: none;">
+        <svg viewBox="0 0 63 63"><circle cx="31.5" cy="31.5" r="30" fill="none" stroke="white" stroke-width="2"/><path d="M25,20 L45,31.5 L25,43 Z" fill="white"/></svg>
+    </span>
+</a>
+
+        
+        <div class="tabs">
+            <span class="active">الوصف</span>
+            <span onclick="openModal('commentModal')">التعليقات</span>
+            <span onclick="openModal('ratingModal')">قيم العنصر</span>
+        </div>
+
+
+ 
+
+                    <div id="commentModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3>ارسل تعليق لهذا المحتوى</h3>
+            <input type="email" placeholder="الايميل" class="modal-input">
+            <textarea placeholder="التعليق" class="modal-input" rows="2"></textarea>
+            <button class="send-btn" onclick="submitComment()">إرسال</button>
+        </div>
+    </div>
+
+
+ 
+<div id="ratingModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <h3>ارسل تقييمك لهذا المحتوى</h3>
+        
+        <div class="stars">
+             <svg class="star-icon" onclick="rate(1)" width="25" height="25" viewBox="0 0 56 56"><path d="M27.758,3.393l4.165,8.336a5.143,5.143,0,0,0,3.361,2.487l7.55,1.255c4.828.805,5.964,4.31,2.485,7.768l-5.869,5.873A5.145,5.145,0,0,0,38.219,33.4L39.9,40.67c1.325,5.755-1.728,7.981-6.816,4.973l-7.076-4.192a5.113,5.113,0,0,0-4.686,0l-7.076,4.192C9.18,48.651,6.1,46.4,7.429,40.67L9.109,33.4a5.145,5.145,0,0,0-1.231-4.287L2.009,23.239c-3.455-3.458-2.343-6.963,2.485-7.768l7.55-1.255a5.155,5.155,0,0,0,3.337-2.487l4.165-8.336C21.818-1.131,25.51-1.131,27.758,3.393Z" stroke-width="2"/></svg>
+                <svg class="star-icon" onclick="rate(2)" width="25" height="25" viewBox="0 0 56 56"    ><path d="M27.758,3.393l4.165,8.336a5.143,5.143,0,0,0,3.361,2.487l7.55,1.255c4.828.805,5.964,4.31,2.485,7.768l-5.869,5.873A5.145,5.145,0,0,0,38.219,33.4L39.9,40.67c1.325,5.755-1.728,7.981-6.816,4.973l-7.076-4.192a5.113,5.113,0,0,0-4.686,0l-7.076,4.192C9.18,48.651,6.1,46.4,7.429,40.67L9.109,33.4a5.145,5.145,0,0,0-1.231-4.287L2.009,23.239c-3.455-3.458-2.343-6.963,2.485-7.768l7.55-1.255a5.155,5.155,0,0,0,3.337-2.487l4.165-8.336C21.818-1.131,25.51-1.131,27.758,3.393Z" stroke-width="2"/></svg>
+                <svg class="star-icon" onclick="rate(3)" width="25" height="25" viewBox="0 0 56 56"  ><path d="M27.758,3.393l4.165,8.336a5.143,5.143,0,0,0,3.361,2.487l7.55,1.255c4.828.805,5.964,4.31,2.485,7.768l-5.869,5.873A5.145,5.145,0,0,0,38.219,33.4L39.9,40.67c1.325,5.755-1.728,7.981-6.816,4.973l-7.076-4.192a5.113,5.113,0,0,0-4.686,0l-7.076,4.192C9.18,48.651,6.1,46.4,7.429,40.67L9.109,33.4a5.145,5.145,0,0,0-1.231-4.287L2.009,23.239c-3.455-3.458-2.343-6.963,2.485-7.768l7.55-1.255a5.155,5.155,0,0,0,3.337-2.487l4.165-8.336C21.818-1.131,25.51-1.131,27.758,3.393Z" stroke-width="2"/></svg>
+                <svg class="star-icon" onclick="rate(4)" width="25" height="25" viewBox="0 0 56 56"  ><path d="M27.758,3.393l4.165,8.336a5.143,5.143,0,0,0,3.361,2.487l7.55,1.255c4.828.805,5.964,4.31,2.485,7.768l-5.869,5.873A5.145,5.145,0,0,0,38.219,33.4L39.9,40.67c1.325,5.755-1.728,7.981-6.816,4.973l-7.076-4.192a5.113,5.113,0,0,0-4.686,0l-7.076,4.192C9.18,48.651,6.1,46.4,7.429,40.67L9.109,33.4a5.145,5.145,0,0,0-1.231-4.287L2.009,23.239c-3.455-3.458-2.343-6.963,2.485-7.768l7.55-1.255a5.155,5.155,0,0,0,3.337-2.487l4.165-8.336C21.818-1.131,25.51-1.131,27.758,3.393Z" stroke-width="2"/></svg>
+                <svg class="star-icon" onclick="rate(5)" width="25" height="25" viewBox="0 0 56 56"> <path d="M27.758,3.393l4.165,8.336a5.143,5.143,0,0,0,3.361,2.487l7.55,1.255c4.828.805,5.964,4.31,2.485,7.768l-5.869,5.873A5.145,5.145,0,0,0,38.219,33.4L39.9,40.67c1.325,5.755-1.728,7.981-6.816,4.973l-7.076-4.192a5.113,5.113,0,0,0-4.686,0l-7.076,4.192C9.18,48.651,6.1,46.4,7.429,40.67L9.109,33.4a5.145,5.145,0,0,0-1.231-4.287L2.009,23.239c-3.455-3.458-2.343-6.963,2.485-7.768l7.55-1.255a5.155,5.155,0,0,0,3.337-2.487l4.165-8.336C21.818-1.131,25.51-1.131,27.758,3.393Z" stroke-width="2"/></svg>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="modal-actions">
+            <button class="action-btn active" onclick="submitRating()">ارسال</button>
+            <div class="vertical-line"></div>
+            <button class="action-btn" onclick="closeModalDirectly()">ليس الآن</button>
+        </div>
+    </div>
+</div>
+
+
+
+         <h1 id="display-title">كتاب حمى بلاد الشام</h1>
+        <p class="author">راشد لولو</p>
+        <p id="display-desc">رحلة ملهمة تغوص في أعماق النفس البشرية لتقدم لك خارطة طريق عملية نحو التغيير الإيجابي وتحقيق الأهداف. يجمع هذا الكتاب بينالحكمة العميقة والخطوات الواقعية التي تجعل من تطوير حياتك تجربة ممتعة وممكنة</p>
+         
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    // إغلاق النافذة فقط عند الضغط على الأزرار
+    function closeModalDirectly() {
+        document.getElementById('ratingModal').style.display = 'none';
+    }
+
+    // دالة تقييم النجوم
+    function rate(n) {
+        const stars = document.querySelectorAll('.star-icon');
+        stars.forEach((s, i) => s.classList.toggle('active', i < n));
+        
+        // اختيارية: يمكنك تخزين قيمة التقييم في متغير هنا
+        console.log("تم تقييم: " + n + " نجوم");
+    }
+
+    // دالة الإرسال
+    function submitRating() {
+        // هنا يمكنك إضافة كود إرسال التقييم للسيرفر
+        alert("تم إرسال تقييمك بنجاح!");
+        closeModalDirectly();
+    }
+
+    // 4. دالة إرسال التعليق
+    function submitComment() {
+        // يمكنك هنا إضافة كود إرسال البيانات للسيرفر
+        alert("تم إرسال التعليق!");
+        document.getElementById('commentModal').style.display = 'none';
+    }
+</script>
+
+
+
+
+
+<script>
+  //Star
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(e) { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; }
+        
+        function rate(n) {
+            const stars = document.querySelectorAll('.star-icon');
+            stars.forEach((s, i) => s.classList.toggle('active', i < n));
+        }
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const backBtn = document.getElementById('back-button');
+        
+        if (backBtn) {
+            // استخدام pointerdown ليعمل على الماوس واللمس فوراً
+            backBtn.addEventListener('pointerdown', function(e) {
+                e.preventDefault();
+                
+                const lastPage = localStorage.getItem('lastPage') || 'courses.html';
+                const section = localStorage.getItem('returnSection') || '';
+                
+                window.location.href = lastPage + (section ? '#' + section : '');
+            });
+        }
+    });
+</script>
+
+ <script>
+    const articlesDB = {
+
+        'course_header_1': { 
+        title: "فنون الرسم والحرف اليدوية", 
+        author: "فريق زاد تك", 
+        desc: "تعلم أساسيات الرسم اليدوي والحرف الفنية بطريقة احترافية...", 
+        img: "images/design.jpg", 
+        video: "..." 
+        },
+
+       'course_header_2': { 
+        title: "التصميم والمونتاج", 
+        author: "م.داليا كساب", 
+        desc: "احتراف برامج المونتاج والتحرير الصوري...", 
+        img: "images/montage.jpg", 
+        video: "..." 
+        },
+
+       'course_header_3': { 
+        title: "برمجة المواقع والتطبيقات", 
+        author: "فريق زاد تك", 
+        desc: "تعلم البرمجة من الصفر وبناء تطبيقات ويب كاملة...", 
+        img: "images/web.jpg", 
+        video: "..." 
+        },
+        
+        'silence': { 
+            title: "دورة التصميم والمونتاج", 
+            author: "م.محمود زايد", 
+            desc: "دورة مكثفة تجمع بين المعرفة النظرية والتطبيق العملي لتزويدك بالمهارات الأكثر طلباً في سوق العمل. ستتعلم من خلال مشاريع حقيقية وبإشراف خبراء لضمان انتقالك من مرحلة التعلم إلى الاحتراف مباشرة.", 
+            img: "images/maqal 1.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        'course1': { 
+            title: "دورة اللغة الإنجليزية", 
+            author: "م.داليا كساب", 
+            desc: "تعلّم الإنجليزية من الصفر بأسلوب تفاعلي...", 
+            img: "images/course1.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        'course2': { 
+            title: "دورة التصميم والمونتاج", 
+            author: "م.داليا كساب", 
+            desc: "احتراف أدوبي بريمير والفوتوشوب...", 
+            img: "images/course2.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        'course3': { 
+            title: "دورة التسويق الرقمي", 
+            author: "م.داليا كساب", 
+            desc: "خارطة طريق كاملة للعمل في مجال التسويق...", 
+            img: "images/course3.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        'course4': { 
+            title: "دورة التسويق الرقمي", 
+            author: "فريق زاد تك", 
+            desc: "خارطة طريق كاملة للعمل في مجال التسويق...", 
+            img: "images/course3.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        'course5': { 
+            title: "دورة التسويق الرقمي", 
+            author: "فريق زاد تك", 
+            desc: "خارطة طريق كاملة للعمل في مجال التسويق...", 
+            img: "images/course3.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        //ذات الصلة
+        'health': { 
+            title: "مقال عن الصحة البدنية", 
+            author: "راشد لولو", 
+            desc: "نص مفصل عن أهمية الصحة البدنية...", 
+            img: "images/health.jpg", 
+            video: "" 
+        },
+        'protein': { 
+            title: "كيف تبلش بروتين صحي", 
+            author: "أحمد علي", 
+            desc: "دليل كامل عن أنواع البروتين...", 
+            img: "images/protein.jpg", 
+            video: "" 
+        },
+        'poetry': { 
+            title: "الشعر العربي الجاهلي", 
+            author: "خالد بن الوليد", 
+            desc: "رحلة في أعماق المعلقات...", 
+            img: "images/poetry.jpg", 
+            video: "" 
+        },
+        'psychology': { 
+            title: "التفكير الروحي والعلاج النفسي", 
+            author: "سارة محمود", 
+            desc: "كيف يؤثر السلام النفسي...", 
+            img: "images/psy.jpg", 
+            video: "" 
+        },
+        'ai': { 
+            title: "الذكاء الاصطناعي والمجتمع", 
+            author: "فريق زاد تك", 
+            desc: "كيف يغير الذكاء الاصطناعي...", 
+            img: "images/دورة تدريبية.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        },
+        'learn': { 
+            title: "بتحلم تصير مدير تسويق إعلانات؟", 
+            author: "فريق زاد تك", 
+            desc: "دليل شامل للمبتدئين...", 
+            img: "images/artical 3.jpg", 
+            video: "https://www.youtube.com/watch?v=..." 
+        }
+    };
+
+    
+
+     function loadArticle(id) {
+        const data = articlesDB[id];
+        if (!data) return;
+
+        // 1. تحديث النصوص والصورة
+        document.getElementById('display-title').innerText = data.title;
+        document.querySelector('.author').innerText = data.author;
+        document.getElementById('display-desc').innerText = data.desc;
+        document.getElementById('display-image').src = data.img;
+
+        const videoLink = document.getElementById('video-link');
+        const playIcon = document.querySelector('.play-icon');
+        const titleEl = document.getElementById('display-title');
+
+        // 2. تفعيل الفيديو فقط إذا وجد رابط
+        if (data.video && data.video !== "") {
+            videoLink.href = data.video;
+            videoLink.style.pointerEvents = "auto";
+            playIcon.style.display = "block";
+        } else {
+            videoLink.href = "javascript:void(0)";
+            videoLink.style.pointerEvents = "none";
+            playIcon.style.display = "none";
+        }
+
+        // إلغاء أي وظيفة ضغط على العنوان
+        titleEl.onclick = null;
+        titleEl.style.cursor = "default";
+        
+        localStorage.setItem('selectedArticle', id);
+    }
+    
+
+      window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id'); // جلب الـ id من الرابط
+
+        if (id) {
+            loadArticle(id); // استدعاء الدالة الموحدة
+        }
+    };
+  
+</script>
+
+<script>
+    //دالة الدورات التدريبية
+    document.addEventListener('DOMContentLoaded', function() {
+        // قراءة الكورس المختار من التخزين المحلي
+        const selectedId = localStorage.getItem('selectedArticle');
+        
+        // إذا كان هناك كورس مختار وكان موجوداً في قاعدة البيانات
+        if (selectedId && articlesDB[selectedId]) {
+            loadArticle(selectedId);
+        }
+    });
+</script>
+
+
+    </body>
+</html>

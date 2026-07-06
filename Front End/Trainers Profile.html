@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadtech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/Trainers Profile.css" />
+</head>
+<body> 
+<header class="navbar">
+  <div class="container">
+
+    <nav class="nav-links">
+      <a href="#">تعلّم عن الموقع</a>
+      <a href="books.html">كتب</a>
+      <a href="courses.html">الدورات التدريبية</a>
+      <a href="#" class="active">الشخصية</a>
+      <a href="articles.html">المقالات</a>
+      <a href="index.html">الرئيسية</a>
+    </nav>
+
+     
+    <div class="logo">
+      <img src="images/logo.png" alt="ZAD Zyadotech Academy">
+    </div>
+
+    <!-- زر القائمة للموبايل -->
+    <div class="menu-toggle">&#9776;</div>
+  </div>
+</header>
+
+ 
+<!-- القائمة الجانبية للجوال -->
+<div class="mobile-menu">
+  <div class="close-btn">&times;</div>
+
+  <a href="#" class="active">الشخصية</a>
+  <a href="#">الرئيسية</a>
+  <a href="#">تعلّم عن الموقع</a>
+  <a href="#">كتب</a>
+  <a href="#">الدورات التدريبية</a>
+  <a href="#">المقالات</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="layout">
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+        <div class="card role-badge">
+            <h4 id="author-role">ناشط فني وأدبي</h4>
+        </div>
+        
+        <div class="profile-card">
+            <div class="profile-top">
+                <img src="images/img3.jpg" class="avatar">
+                <div>
+                    <h2 id="author-name">محمود درويش</h2>
+                    <p id="author-title">كاتب وشاعر</p>
+                    <p class="bio" id="author-bio">سوري الجنسية، هوايتي الكتابة منذ صغري فقد كنت اقرأ العديد من الروايات والكتب الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته</p>
+                </div>
+               <button class="follow-btn" id="followBtn" onclick="toggleFollow()">متابعة</button>
+            </div>
+                      
+
+            <div class="stats">
+                <div><span>عدد المحاضرات</span><strong id="stat-books">24</strong></div>
+                <div class="divider"></div>
+                <div><span>سنين الخبرة</span><strong id="stat-poems">5</strong></div>
+                <div class="divider"></div>
+                <div><span>عدد الطلاب المستفيدين</span><strong id="stat-followers">10k</strong></div>
+            </div>
+        </div>
+
+
+
+
+
+        <h3>دوراتي المشهورة</h3>
+          <div class="books-grid" id="books-grid">
+  <div class="book-card">
+    <div class="book-cover" style="background-image: url('${b.img}');">
+  <svg class="play-icon" viewBox="0 0 63 63">
+        <circle cx="31.5" cy="31.5" r="30" fill="none" stroke="white" stroke-width="2"/>
+        <path d="M25,20 L45,31.5 L25,43 Z" fill="white"/>
+    </svg>
+    </div>
+      <p><a href="View%20course.html?id=course2">دورة التصميم والمونتاج</a></p>
+  </div>
+
+  <div class="book-card">
+    <div class="book-cover" style="background-image: url('images/book2.jpg');">
+         <span class="play-icon">
+      <svg viewBox="0 0 63 63">
+        <circle cx="31.5" cy="31.5" r="30" fill="none" stroke="black" stroke-width="2"/>
+        <path d="M25,20 L45,31.5 L25,43 Z" fill="white"/>
+      </svg>
+    </span>
+    </div>
+       <p><a href="View%20course.html?id=course1">دورة اللغة الانجليزية</a></p>
+  </div>
+
+  <div class="book-card">
+    <div class="book-cover" style="background-image: url('images/book3.jpg');">
+         <span class="play-icon">
+      <svg viewBox="0 0 63 63">
+        <circle cx="31.5" cy="31.5" r="30" fill="none" stroke="black" stroke-width="2"/>
+        <path d="M25,20 L45,31.5 L25,43 Z" fill="white"/>
+      </svg>
+    </span>
+    </div>
+      <p><a href="View%20course.html?id=course3">دورة التسويق الرقمي</a></p>
+  </div>
+ 
+</div>
+    </main>
+
+
+
+
+
+
+
+     <aside class="sidebar">
+    <h3 class="section-title">ماذا علق المتابعين عن الشعر</h3>
+    
+    
+<div id="comments-container"> 
+
+        <div class="card follower-card">
+         <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 57 57">
+            <g id="Ellipse_32" fill="#e30000" stroke="#707070" stroke-width="1">
+                <circle cx="28.5" cy="28.5" r="28.5" stroke="none"/>
+                <circle cx="28.5" cy="28.5" r="28" fill="none"/>
+            </g>
+            </svg>
+         </div>
+        <div class="follower-info">
+            <h4>محمود احمد</h4>
+            <p>مافي بعدك شعراء</p>
+        </div>
+    </div>
+
+    
+    <div class="card follower-card">
+         <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 57 57">
+            <g id="Ellipse_32" fill="#e30000" stroke="#707070" stroke-width="1">
+                <circle cx="28.5" cy="28.5" r="28.5" stroke="none"/>
+                <circle cx="28.5" cy="28.5" r="28" fill="none"/>
+            </g>
+            </svg>
+         </div>
+        <div class="follower-info">
+            <h4>محبة الشعر</h4>
+            <p>رحمه الله عليه</p>
+        </div>
+    </div>
+
+
+    <div class="card follower-card">
+         <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 57 57">
+            <g id="Ellipse_32" fill="#e30000" stroke="#707070" stroke-width="1">
+                <circle cx="28.5" cy="28.5" r="28.5" stroke="none"/>
+                <circle cx="28.5" cy="28.5" r="28" fill="none"/>
+            </g>
+            </svg>
+         </div>
+        <div class="follower-info">
+            <h4>بحر الشعر</h4>
+            <p>بحب قصائده الوطنية جدا</p>
+        </div>
+    </div>
+    </div>
+</aside>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const authorsData = {
+
+    1: {
+        name: "م.داليا كساب",
+        title: "UXUI Trainer",
+        bio: "لبنانية الجنسية، حاصلة على بكالوريوس هندسة أنظمة الحاسوب، متخصصة في مجال تصميم واجهات المستخدم للمواقع والتطبيقات.",
+        books: 12,
+        poems: 3,
+        followers: 5000,
+        img: "images/img1.png",
+        role: "مدرب معتمد في مجال التصميم",
+
+         works: [  
+            {
+        img: 'images/course2.jpg',
+            title: "دورة التصميم والمونتاج", 
+            courseId: "course2"
+    },
+    {
+        img: 'images/course1.jpg',
+        title: 'دورة اللغة الانجليزية',
+        courseId: "course1"
+    },
+    {
+        img: 'images/course3.jpg',
+        title: 'دورة التسويق الرقمي',
+        courseId: "course3"
+    }
+],
+        comments: [{user: 'سارة', text: 'كتابات رائعة!'},
+                   {user: 'كرم', text: 'أديب لا يعوض'},
+                   {user: 'رزان', text: 'كتاباتك رائعه'},
+                   {user: 'كرم', text: 'أديب لا يعوض'},
+                   {user: 'كرم', text: 'أديب لا يعوض'}
+        ]
+    },
+    2: { name: "غسان كنفاني",
+    title: "أديب وروائي",
+    bio: "كاتب فلسطيني معروف بأعماله الإبداعية الخالدة.",
+    books: 30,
+    poems: 10,
+    followers: 50000,
+    img: "images/img2.jpg",
+    role: "أديب عالمي",
+     works: [
+            {
+                img: 'images/course3.jpg',
+                title: 'دورة التسويق الرقمي',
+                courseId: "course5"
+                },
+            {
+                
+                img: 'images/course3.jpg',
+                title: 'دورة التسويق الرقمي',
+                courseId: "course5"
+            },
+            {
+                 
+                img: 'images/course3.jpg',
+                title: 'دورة التسويق الرقمي',
+                courseId: "course5"
+            }
+        ],
+        comments: [{
+            user: 'خالد', text: 'أحسن مدرب',
+            user: 'خالد', text: 'شرح أكثر من رائع!',
+            user: 'خالد', text: 'شرح أكثر من رائع!',
+            user: 'خالد', text: 'شرح أكثر من رائع!'
+        }]
+    },  
+
+
+     3: {
+        name: "م.محمود زايد",
+        title: "مهندس برمجيات",
+        bio: "لبناني الجنسية، حاصل على بكالوريوس هندسة أنظمةالحاسوب مختص في مجال تصميم واجهات المستخدم للمواقع والتطبيقات",
+        books: 24,
+        poems: 5,
+        followers: 10000,
+        img: "images/img2.png",
+        role: "شاعر ثوري",
+        works: [
+            {img: 'images/دورة تدريبية.jpg', 
+            title: 'دورة تصميم ومونتاج',
+            courseId: "silence"},
+            
+
+             {img: 'images/دورة تدريبية.jpg', 
+            title: 'دورة تصميم ومونتاج',
+             courseId: "silence"},
+
+            {img: 'images/دورة تدريبية.jpg', 
+            title: 'دورة تصميم ومونتاج',
+             courseId: "silence"}
+        ],
+        comments: [{
+            user: 'نور', text: 'كلماتك تلامس القلب',
+            user: 'لين', text: 'مدرب موهوب'
+        }]
+    }
+};
+
+
+function updateUI(id) {
+
+    const author = authorsData[id];
+
+    if (!author) return;
+
+    // 1. تحديث النصوص والصورة
+    document.getElementById('author-name').innerText = author.name;
+    document.getElementById('author-title').innerText = author.title;
+    document.getElementById('author-bio').innerText = author.bio;
+    document.getElementById('author-role').innerText = author.role;
+    document.querySelector('.avatar').src = author.img;
+
+    // 2. تحديث الإحصائيات
+    document.getElementById('stat-books').innerText = author.books;
+    document.getElementById('stat-poems').innerText = author.poems;
+    document.getElementById('stat-followers').innerText = localStorage.getItem(`followers_${id}`) || author.followers;
+
+
+     // 3. تحديث الكتب ديناميكياً
+ const booksGrid = document.getElementById('books-grid');
+    if (author.works) {
+        // داخل updateUI - الجزء الخاص بتوليد الكروت
+booksGrid.innerHTML = author.works.map(b => `
+    <div class="book-card">
+        <div class="book-cover" style="background-image: url('${b.img}')">
+            <!-- تمت إضافة الرابط هنا ليشمل الـ id -->
+            <a href="View course.html?id=${b.courseId}">
+
+                 <svg class="play-icon" viewBox="0 0 63 63">
+                    <circle cx="31.5" cy="31.5" r="30" fill="none" stroke="white" stroke-width="2"/>
+                    <path d="M25,20 L45,31.5 L25,43 Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
+        <p><a href="View course.html?id=${b.courseId}">${b.title}</a></p>
+    </div>`).join('');
+    }
+
+    // 4. تحديث التعليقات ديناميكياً
+
+const commentsCont = document.getElementById('comments-container');
+commentsCont.innerHTML = author.comments.map(c => `
+    <div class="card follower-card">
+        <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 57 57">
+                <g fill="#e30000" stroke="#707070" stroke-width="1">
+                    <circle cx="28.5" cy="28.5" r="28.5" stroke="none"/>
+                    <circle cx="28.5" cy="28.5" r="28" fill="none"/>
+                </g>
+            </svg>
+        </div>
+        <div class="follower-info">
+            <h4>${c.user}</h4>
+            <p>${c.text}</p>
+        </div>
+    </div>`).join('');
+}
+
+
+
+function toggleFollow() {
+    const btn = document.getElementById('followBtn');
+    const followersEl = document.getElementById('stat-followers');
+    let id = localStorage.getItem('activeAuthorId') || 1;
+    let count = parseInt(followersEl.innerText.replace('k', '')) * (followersEl.innerText.includes('k') ? 1000 : 1);
+
+    if (btn.innerText.includes("متابعة")) {
+        count++;
+        btn.innerHTML = '✓ أتابع';
+        btn.style.backgroundColor = "#90a4ae";
+    } else {
+        count--;
+        btn.innerText = "متابعة";
+        btn.style.backgroundColor = "";
+    }
+    followersEl.innerText = count;
+    localStorage.setItem(`followers_${id}`, count);
+}
+
+
+window.onload = () => {
+    let savedId = localStorage.getItem('activeAuthorId') || 1;
+    updateUI(savedId);
+};
+</script> 
+
+
+
+
+
+<script>
+  //القائمة
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.querySelector('.close-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    //  فتح القائمة
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.add('active');
+        });
+    }
+
+    //   إغلاق القائمة 
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.remove('active');
+        });
+    }
+
+    //   إغلاق القائمة إذا ضغط المستخدم خارجها في أي مكان بالصفحة
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+</script>
+
+
+
+ 
+
+ 
+    </body>
+</html>

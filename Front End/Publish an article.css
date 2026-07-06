@@ -1,0 +1,264 @@
+/* الحاوية الرئيسية */
+.post-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    background-color: #fff;
+}
+
+.logo img {
+    height: 80px; /* حجم معقول للـ Navbar */
+    width: auto;
+    transform: scale(3.5); /* يكبر اللوجو بنسبة 50% إضافية عن حجمه الحالي */
+    transform-origin: right center; /* يجعل التكبير يبدأ من اليمين (جهة اللوجو) */
+    display: block;
+    margin-right: 680px;
+    padding-bottom: 15px;
+}
+/* العنوان */
+.post-title {
+    text-align: right;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+ 
+.post-form {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.upload-area {
+    flex: 1;
+    border-radius: 15px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23000' stroke-width='1.5' stroke-dasharray='10%2C10'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.upload-area svg {
+    width: 90px;   
+    height: auto;  
+}
+.upload-area p{
+    font-weight: 500;
+    color: #000000;
+    font-size: 18px;
+}
+
+
+ 
+.inputs-area {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute; /* تثبيت الأيقونة */
+    right:  25px;         /* المسافة من جهة اليمين في العربية */
+    width: 20px;        /* حجم الأيقونة */
+    height: 20px;
+    z-index: 10;        /* لضمان ظهورها فوق النص */
+    pointer-events: none; /* مهم جداً: لكي لا تضغط على الأيقونة بدلاً من الحقل */
+}
+/* تنسيق أيقونة الوصف */
+.description-input {
+    position: absolute; /* تجعلها تطفو داخل الصندوق */
+    top: 18px;          /* المسافة من الأعلى */
+    right: 25px;         /* المسافة من اليسار (لأنها في الـ textarea) */
+    width: 20px;        /* حجم مناسب للأيقونة */
+    height: 20px;
+    pointer-events: none; /* لتسمح للمستخدم بالكتابة فوقها دون أن يضغط عليها */
+    z-index: 5;         /* لتكون فوق الحقل */
+}
+
+.input-field, .textarea-field {
+    width: 100%;
+    padding: 15px 50px 15px 15px; /* مساحة للأيقونة */
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #000000 !important;
+    background-color: #f4f4f4;
+    font-weight: 400;
+    font-family: 'Tajawal', sans-serif;
+    margin-right: 7px;
+}
+.input-field {
+    height: 50px;
+}
+
+.textarea-field {
+    height: 180px;
+    resize: none;
+}
+ 
+.input-field::placeholder, 
+.textarea-field::placeholder {
+    color: #000000 !important;  
+    /*opacity: 1 !important;*/     
+}
+
+.post-btn {
+    width: 35%;
+    padding: 7px  15px;
+    background-color: #204a87;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 300px;
+    margin-top: 70px;
+    font-family: 'Almarai', sans-serif;
+}
+
+.post-btn:hover {
+    background-color: #1a3a6a;
+}
+.Publish-now{
+     width: 23px;   
+    height: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 📱 موبايل (أقل من 768px) */
+@media (max-width: 767px) {
+  .post-container {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+ /* .logo img {
+    height: 60px;
+    transform: scale(3.2);
+    margin-right: 0;
+    margin: 0 auto;
+    display: block;
+    margin-left: 0;
+  }*/
+  .logo img {
+  height: 60px;
+  transform: scale(3);         
+  transform-origin: left center;  
+  display: block;
+  margin-left: -20px;              
+  margin-right: auto;          
+  max-width: 100%;   
+  padding-top: 10px;         
+}
+
+
+  .post-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .upload-area {
+    padding: 40px 20px;
+  }
+
+  .input-field, .textarea-field {
+    font-size: 16px;
+    padding: 12px 40px 12px 12px;
+  }
+
+  .post-btn {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    font-size: 15px;
+  }
+}
+
+/* 💻 آيباد (من 768px إلى 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .post-container {
+    max-width: 85%;
+    margin: 30px auto;
+    padding: 25px;
+  }
+
+  .logo img {
+  height: 60px;
+  transform: scale(3);         
+  transform-origin: left center;  
+  display: block;
+  margin-left: -20px;              
+  margin-right: auto;          
+  max-width: 100%;   
+  padding-top: 10px;         
+}
+  .post-form {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .upload-area {
+    padding: 50px 20px;
+    border: 1px dashed #000; 
+  }
+
+  .input-field, .textarea-field {
+    font-size: 17px;
+    padding: 14px 45px 14px 14px;
+  }
+
+  .post-btn {
+    width: 60%;
+    margin: 50px auto 0 auto;
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+/*انميشن*/
+.fade-in {
+    opacity: 0;
+     transform: translateY(40px);  
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+}
+
+ 
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* العنصر يظهر ويصعد لمكانه الطبيعي */
+}
