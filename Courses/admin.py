@@ -33,9 +33,9 @@ class CoursesAdmin(admin.ModelAdmin):
         'teacher_name', 
         'level', 
         'is_free', 
-        'certificate',  # ✅ أضفناها هنا
+        'certificate', 
         'rating',
-        'status'  # أضفناها أيضاً
+        'status' 
     ]
     
     list_filter = ['level', 'is_free', 'certificate', 'status']

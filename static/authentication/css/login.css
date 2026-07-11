@@ -150,8 +150,6 @@ input {
 }
 
 
- 
-
 
 /*تنسيق الايبادات*/
 @media (max-width: 768px) {
@@ -170,7 +168,6 @@ input {
 @media (max-width: 480px) {
     .card-wrapper { 
         width: 95%; 
-         
     }
 
     .blue-shape, .yellow-shape {
