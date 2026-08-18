@@ -1,0 +1,657 @@
+
+ html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;  
+    width: 100% !important;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: 'Tajawal', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+* {
+    box-sizing: border-box !important; 
+     
+}
+ 
+ 
+ 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -15px; 
+}
+
+.navbar {
+    background: #dce3e8;  
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+.logo img {
+    height: 80px; /* حجم معقول للـ Navbar */
+    width: auto;
+    transform: scale(3); /* يكبر اللوجو بنسبة 50% إضافية عن حجمه الحالي */
+    transform-origin: right center; /* يجعل التكبير يبدأ من اليمين (جهة اللوجو) */
+    display: block;
+    margin-left: 210px;
+    margin-top: 20px;
+}
+.nav-links {
+    margin-right: 170px;
+    margin-top: 20px;
+}
+.nav-links a {
+    font-family: 'Tajawal', sans-serif;
+    text-decoration: none;
+    /*color: #263c5a;*/
+    color: #000000;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: 800px;
+    transition: color 0.3s;
+    position: relative;  
+    text-decoration: none;
+    display: inline-block;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* المسافة بين النص والخط */
+    left: 50%; /* يبدأ من المنتصف */
+    width: 0; /* الطول في البداية صفر */
+    height: 2px; /* سماكة الخط */
+    background-color: #000; /* لون الخط (نفس لون النص أو ذهبي) */
+    transition: all 0.2s ease-in-out; /* سرعة الحركة */
+    transform: translateX(-50%); /* يضمن أن التمدد يبدأ من المركز تماماً */
+}
+ .nav-links a:hover::after {
+    width: 100%; /* يتمدد ليغطي عرض الكلمة بالكامل */
+}
+
+
+.nav-links a.active::after {
+    width: 100% !important; 
+}
+
+.nav-links:hover a.active::after {
+    width: 0 !important;
+}
+
+.nav-links:hover a:hover::after {
+    width: 100% !important;
+}
+.menu-toggle, .mobile-menu {
+    display: none;
+}
+
+
+ 
+
+/* 📱 للموبايل (أقل من 768px) */
+ @media (max-width: 768px) {
+    
+     
+     .navbar .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 25px 0 105px !important;
+        display: flex !important;
+        flex-direction: row-reverse !important; 
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+
+     
+    .navbar .nav-links, 
+    .navbar > .container > .login-btn {
+        display: none !important;
+    }
+    .logo {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .logo img {
+    height: 65px !important;  
+    width: auto !important;
+    margin: 0 !important;
+    
+     
+    transform: scale(2.9) !important; 
+    transform-origin: right center !important; 
+    
+}
+
+
+    /* زر الـ 3 شرطات (☰) */
+    .menu-toggle {
+        display: block !important;
+        font-size: 28px !important;
+        color: #005a70 !important; 
+        cursor: pointer !important;
+        user-select: none !important;
+    }
+
+    /* القائمة الجانبية (موزونة بالملي لمنع قص النصوص) */
+    .mobile-menu {
+        position: fixed;
+        top: 85px;
+        right: -300px;  
+        width: 270px;  
+        height: 60vh; 
+        background-color: #ffffff; 
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        z-index: 99999; 
+        padding: 25px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        direction: rtl; 
+        border-radius: 2px;
+        margin: 0 !important;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+     
+    .mobile-menu.active {
+        right: 0;
+        margin-right: 0 !important;
+         
+    }
+
+     
+    
+
+
+
+     
+
+   .mobile-menu .close-btn {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;         
+  background: none;       
+  border: none;            
+  padding: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+    /* تنسيق الروابط الداخلية وبقائها داخل الصندوق */
+    .mobile-menu a {
+        display: block !important;
+        font-family: 'Tajawal', sans-serif !important;
+        text-decoration: none !important;
+        color: #000000;
+        font-size: 17px !important;
+        font-weight: 500 !important;
+        text-align: right !important;
+        white-space: nowrap !important; /* يمنع الكلمات الطويلة من النزول لسطر جديد */
+        width: fit-content !important;
+        transition: color 0.3s ease !important;
+        /*margin-top: 10px;*/
+        padding-top: 20px;
+        
+    }
+
+    .mobile-menu a:hover {
+        color: #ffca47 !important; 
+    }
+
+    /* زر تسجيل الدخول المستقر بأسفل القائمة الجانبية */
+    .mobile-menu .login-btn {
+        margin-top: 15px !important;
+        margin-right: 80px;
+        
+        width: 100% !important;
+    }
+    .mobile-menu .login-btn a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        padding: 11px 0 !important;
+        font-size: 16px !important;
+        color: #ffca47 !important;
+        border: 2px solid #ffca47 !important;
+        border-radius: 25px !important;
+        background-color: transparent !important;
+    }
+    .mobile-menu .login-btn a:hover {
+        background-color: #ffca47 !important;
+        color: #005a70 !important;
+    }
+}
+
+
+
+/* 📱 للآيباد (من 769px إلى 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar .container {
+        width: 95%;
+        max-width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+         
+    }
+
+    .logo img {
+        height: 60px;        /* حجم متوسط للوجو */
+        transform: none;     /* إلغاء التكبير المبالغ فيه */
+        margin-left: 70px;   /* مسافة جانبية أقل */
+        transform: scale(2.9) !important; 
+    }
+
+    .nav-links {
+        margin-left: 50px;  
+    }
+
+    .nav-links a {
+        font-size: 15px;      
+        margin: 0 10px;
+    }
+
+    .login-btn a {
+        padding: 6px 30px;   
+        font-size: 14px;
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+.layout {
+     display: flex; 
+     gap: 20px; 
+     padding: 45px; 
+     background-color: #dce3e8;
+     flex-wrap: wrap; 
+     justify-content: center;
+     padding-left: 90px;
+     margin-top: -40px;
+     margin-left: -30px;
+     align-items: center;
+    }
+    
+.role-badge{
+    margin-right: 0.5px;
+    /*width: 1050px;*/
+    width: 107.6%;
+    height: 60px;
+    justify-content: center;
+ }
+ .role-badge h4 {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+ }
+.card { 
+    background: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 12px; 
+    padding: 15px; 
+    margin-bottom: 15px; 
+}
+
+ 
+.profile-card {
+     background: #fff; 
+     border: 1px solid #ddd; 
+     border-radius: 12px; 
+     padding: -35px;
+     width: 707px;
+     height: 260px; 
+     padding-top: 10px;
+     padding-right: 10px;
+  
+    }
+.profile-top {
+     display: flex; 
+     align-items: center; 
+     gap: 10px; 
+     margin-bottom: 50px;
+     margin-right: 15px;
+    }
+.profile-top img{
+    margin-bottom: 5px;
+}
+.profile-top h2{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.profile-top p{
+    color: #333333;
+    font-family: 'Tajawal', sans-serif;
+    font-family: 6px;
+    margin-right: 10px;
+    font-size: 14px;
+    margin-top: -10px;
+}
+.profile-top .bio{
+    color: #666666;
+    font-size: 13px;
+    width: 300%;
+    margin-top: -10px;
+}
+.avatar { width: 80px; height: 80px; border-radius: 50%; }
+.follow-btn {
+     background: #274e82; 
+     color: #fff; 
+     border: none; 
+     padding: 8px 31px; 
+     border-radius: 3px; 
+     font-family: 'Tajawal', sans-serif;
+     font-weight: 500;
+     margin-bottom: 50px;
+     cursor: pointer;
+     margin-right: 140px;
+     display: inline-flex;
+     align-items: center;        /* لتوسيط الصح والنص عمودياً */
+    justify-content: center;
+    }
+    .check-icon {
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* الإحصائيات بخطوط فاصلة */
+.stats { 
+    display: flex; 
+    justify-content: flex-start;
+    margin-top: 20px; 
+    padding-top: 15px;
+    color: #666666;
+    font-size: 14px; 
+    font-family: 'Tajawal', sans-serif;
+    margin-bottom: 40px;
+    margin-top: -50px;
+    margin-right: 20px;
+    align-items: center;
+    position: relative;
+    
+}
+.stats > div { 
+    display: flex;
+    text-align: center; 
+    flex-direction: column;
+    justify-content: center;
+}
+.divider {
+    width: 1px;        
+    height: 30px;      /* طول الخط (صغره أو كبره من هون) */
+    background-color: #ddd; /* لون الخط */
+    margin: 0 20px;    /* مسافة يمين ويسار الخط */
+    flex-direction: column;
+}
+.stats > div:last-child {
+    border-left: none;
+    padding-left: 0;
+}
+.stats strong{
+    font-weight: 300;
+    font-size: 12px;
+    font-family: 'Tajawal', sans-serif;
+    color: #333333;
+
+}
+ 
+.main-content h3{
+    margin-bottom: -15px;
+    font-weight: 550;
+    font-size: 14px;
+    color: #000000;
+    font-family: 'Tajawal', sans-serif;
+    margin-right: 50px;
+}
+.books-grid {
+  display: flex;               
+  gap: 8px;                  
+  justify-content: flex-start;
+ /* padding: 17px;*/
+  margin: 0;    
+  width: 100%;
+  padding-left: 30px;
+  flex-wrap: wrap;
+  margin-left: 200px;
+  
+}
+.book-card {
+ /* width: 280px !important;*/
+ flex: 0 0 230px !important;
+  height: 203px;              
+  border-radius: 12px;        
+  background: #fff;           
+  overflow: hidden;         
+  font-family: 'Tajawal', sans-serif;
+  margin-top: 20px;
+}
+.book-cover {
+  height: 130px;              /* ارتفاع الغلاف */
+  border-radius: 12px; /* زوايا علوية ناعمة */
+  background-size: cover;     /* الصورة تغطي كامل المساحة */
+  background-position: center;/* الصورة بالنص */
+}
+
+.book-card p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #4A4A4A;
+  font-weight: 500;
+  margin-right: 10px;
+  font-family: 'Tajawal', sans-serif;
+}
+.book-link {
+    text-decoration: none;     
+    color: #4A4A4A;           
+    transition: 0.3s;       
+    display: inline-block;
+    border-bottom: 2px solid transparent;  
+    margin-right: 10px;
+}
+
+.book-link:hover {
+    color: #4A4A4A;          /* يبقى اللون أسود عند المرور (أو يمكنك تغييره) */
+    border-bottom: 2px solid #000000; /* يظهر الخط الأسود فقط عند المرور */
+    cursor: pointer;
+}
+.sidebar {
+    width: 300px;
+    height: 500px;
+    padding: 1px 10px;
+    background-color:  #f0f0f0;
+    margin-top: 58px;
+    margin-right: -250px;
+    margin-bottom: -18px;
+    
+}
+
+.section-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+    margin-right: 30px;
+    color: #000000;
+}
+.follower-card {
+    display: flex; /* لترتيب النص والدائرة جنباً إلى جنب */
+    align-items: center; /* لتوسيط العناصر عمودياً */
+    padding: 12px 15px;
+    border: none;
+    margin: 8px;
+}
+.follower-info{
+    margin-right: 10px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+}
+  
+.follower-info h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.follower-info p {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #666;
+     
+}
+
+.circle {
+    width: 36px;
+    height: 36px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    flex-shrink: 0; /* لمنع الدائرة من الانضغاط */
+}
+
+
+
+
+
+
+
+
+
+/* 📱 للجوال (شاشات أقل من 768px) */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;  
+        padding: 30px !important;
+        margin: 0 !important;
+        align-items: flex-start;
+      /* padding-left: -30px !important;*/
+
+         
+         
+    }
+ 
+    .profile-card, .sidebar {
+        width: 81% !important; /* تأخذ كامل عرض الشاشة */
+        margin: 0 !important;
+        height: auto !important; /* الارتفاع يكون تلقائي حسب المحتوى */
+    }
+    .profile-card{
+        flex: none !important;
+        
+    }
+     
+     /* الزر الأصلي نجعله شفافاً أو في مكان بعيد ونحركه */
+.follow-btn {
+    position: relative !important;
+    left: 90px !important; /* هنا الإزاحة التي تريدينها */
+    bottom: 20px;
+    padding: 5px 20px;
+    z-index: 10;
+}
+
+/* نخدع المتصفح بوضع عنصر وهمي بنفس حجم الزر في مكانه الأصلي */
+.follow-btn::before {
+    content: "";
+    position: absolute;
+    left: -40px; /* نعكس اتجاه الإزاحة ليعود لمكانه الأصلي */
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* ليبقى خلف الزر ولا يراه المستخدم */
+}
+     
+    .role-badge{
+    width: 81%;
+    }
+    
+
+    .books-grid {
+        margin: 0 !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        width: 81%;
+    }
+
+    .book-card {
+        flex: 0 0 100% !important;  
+    }
+   
+    .sidebar {
+        width: 90% !important;
+        
+        /* 1. التوسيط */
+        margin: 20px auto !important; 
+        
+        /* 2. الإزاحة لليمين بأمان تام */
+        /* استبدلي 20px بأي قيمة تريدينها حتى يضبط المكان */
+        transform: translateX(40px) !important; 
+        
+        /* تأكدي من هذه القيم لمنع أي انزياح */
+        position: relative !important;
+        float: none !important;
+        left: 0 !important;
+        padding-bottom: 100px !important;
+    }
+}
+/* 📱 للأجهزة اللوحية (الآيباد - بين 769px و 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .layout {
+        padding: 20px !important;
+        gap: 15px;
+        margin-top: -20px;
+        align-items: center;
+        padding-bottom: 200px !important ;
+    }
+    
+    .profile-card {
+        width: 80% !important;  
+        margin-right: 70px;
+    }
+    .role-badge{
+    width: 80%;
+    margin-right: 70px;
+    }
+
+    .books-grid {
+        margin-right: 60px;
+    }
+    .main-content h3{
+        margin-right: 90px;
+    }
+    .sidebar {
+        width: 70% !important; /* أو يمكنك جعلها بجانب الكارد إذا كانت المساحة تسمح */
+        margin: 0 !important;
+    }
+}
+.follow-btn {
+    margin-left: 20px;
+}
+.nav-links{
+     margin-right: 25px;
+}
+.logo img{
+    margin-right: 0;
+}

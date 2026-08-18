@@ -1,0 +1,354 @@
+{% extends "core/layout.html" %}
+{% load static %}
+
+{% block head %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadtech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="{% static 'courses/css/courses.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}    
+
+<!-- القائمة الجانبية للجوال -->
+<div class="mobile-menu">
+  <div class="close-btn">&times;</div>
+  
+  <a href="index.html">الرئيسية</a>
+  <a href="articles.html">المقالات</a>
+  <a href="#" class="courses">الدورات التدريبية</a>
+  <a href="#">كتب</a>
+  <a href="#">تعلم عن الموقع</a>
+  <div class="login-btn">
+    <a href="login.html">تسجيل الدخول</a>
+  </div>
+</div>
+
+
+<section class="search-section">
+<form action="{% url 'courses_list' %}" method="GET" class="search-container">
+    <button type="submit" class="search-btn">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 46 46">
+            <g id="search-normal" transform="translate(2 2)">
+                <path d="M41,20.5A20.5,20.5,0,1,1,20.5,0,20.5,20.5,0,0,1,41,20.5Z" 
+                      fill="none" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <path d="M7,7,2,2" transform="translate(37 37)" 
+                      fill="none" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            </g>
+        </svg>
+    </button>
+    <input
+        type="text"
+        name="q"
+        value="{{ query }}"
+        placeholder="البحث عن دورة تدريبية"
+        class="search-input"
+    >
+</form>
+</section>
+
+
+
+
+
+<section id="hero-section" class="hero-section">
+    <div class="content fade-in">
+        <h2 id="greeting-message">مساء الخير</h2>
+        <p>لديك العديد من الدورات التدريبية</p>
+        
+        <div class="buttons">
+            <a href="{% url 'add_new_course' %}" style="text-decoration: none;">
+                  <button class="btn-solid">نشر دورة جديدة</button>
+            </a>
+            <a href="{% url 'all_courses' %}" style="text-decoration: none;">
+                  <button class="btn-outline">عرض الدورات</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+{% for course in courses %}
+
+    <section class="section-wrapper"> 
+
+        <div class="course-card fade-in">
+
+            <div class="card-media">
+
+                {% if course.thumbnail %}
+
+                    <img
+                        src="{{ course.thumbnail.url }}"
+                        alt="{{ course.title }}"
+                        style="
+                            max-width: 100%;
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                            object-fit: cover;
+                        "
+                    >
+
+                {% else %}
+
+                    <img
+                        src="{% static 'core/images/دورة تدريبية.jpg' %}"
+                        alt="{{ course.title }}"
+                        style="
+                            max-width: 100%;
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                            object-fit: cover;
+                        "
+                    >
+
+                {% endif %}
+
+            </div>
+            
+
+            <div class="card-body">
+
+                <div class="info-section">
+
+                    <p>
+                        <strong>
+                            {{ course.title }}
+                        </strong>
+                    </p>
+
+                    <a
+                        href="{% url 'view_course' course.id %}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="course-btn"
+                    >
+                        بدء متابعة الدورة
+                    </a>
+
+                </div>
+
+{% comment %} 
+                <div class="text-section">
+
+                    <p>
+                        تم نشر هذه الدورة بتاريخ
+                        {{ course.published_at|date:"Y/m/d" }}
+                    </p>
+
+                </div> {% endcomment %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% empty %}
+
+    <section class="section-wrapper">
+
+        <div class="course-card fade-in">
+
+            <div class="card-body">
+
+                <div class="info-section">
+
+                    {% if query %}
+
+                        <p>
+                            <strong>
+                                لا توجد دورات مطابقة لبحثك
+                            </strong>
+                        </p>
+
+                    {% else %}
+
+                        <p>
+                            <strong>
+                                لا توجد دورات منشورة حالياً
+                            </strong>
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endfor %}
+
+<section class="similar-courses" id="courses-section">
+
+    <h2 class="section-title">
+        محتوى مشابه
+    </h2>
+
+
+    {% for course in featured_courses %}
+
+        <div
+            class="card fade-in"
+
+            {% if course.thumbnail %}
+                style="background-image: url('{{ course.thumbnail.url }}');"
+            {% endif %}
+
+            onclick="window.open('{{ course.link|escapejs }}', '_blank')"
+        >
+
+            <div class="card-overlay">
+                {{ course.title }}
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+    {% if courses.paginator.num_pages > 1 %}
+
+    <div class="buttons">
+
+        {% if courses.has_previous %}
+
+            <a
+                href="?q={{ query|urlencode }}&page={{ courses.previous_page_number }}"
+                style="text-decoration: none;"
+            >
+
+                <button
+                    type="button"
+                    class="btn-outline"
+                >
+                    السابق
+                </button>
+
+            </a>
+
+        {% endif %}
+
+
+        {% if courses.has_next %}
+
+            <a
+                href="?q={{ query|urlencode }}&page={{ courses.next_page_number }}"
+                style="text-decoration: none;"
+            >
+
+                <button
+                    type="button"
+                    class="btn-solid"
+                >
+                    التالي
+                </button>
+
+            </a>
+
+        {% endif %}
+
+    </div>
+
+{% endif %}
+
+</section>
+
+
+
+
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.querySelector('.close-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    //  فتح القائمة بالضغط على الـ 3 شرطات
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.add('active');
+        });
+    }
+
+    //  إغلاق القائمة بالضغط على x
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.remove('active');
+        });
+    }
+
+    //  إغلاق القائمة إذا ضغط المستخدم خارجها في أي مكان بالصفحة
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<script>
+    const userName = localStorage.getItem('userName'); // افترضنا أن الاسم مخزن هنا
+    const greetingMessage = document.getElementById('greeting-message');
+
+    if (userName) {
+        // إذا كان مسجلاً للدخول
+        greetingMessage.innerHTML = `مساء الخير <span>${userName}</span>`;
+    } else {
+        // إذا كان زائراً
+        greetingMessage.innerHTML = `مساء الخير <span>زائرنا الكريم</span>`;
+    }
+</script>
+
+
+ <script>
+    function selectService(articleId, sectionId = null) {
+        // حفظ اسم الكورس
+        localStorage.setItem('selectedArticle', articleId);
+        
+        // حفظ السيكشن إذا وجد (للعودة إليه)
+        if (sectionId) {
+            localStorage.setItem('returnSection', sectionId);
+        } else {
+            localStorage.removeItem('returnSection'); // مسح أي سكشن قديم
+        }
+        
+        // الانتقال لصفحة العرض
+        window.location.href = 'View course.html'; 
+    }
+</script>
+
+
+<script>
+  //انميشن
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+
+{% endblock body %}
