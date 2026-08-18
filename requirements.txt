@@ -33,7 +33,7 @@ httplib2==0.31.0
 idna==3.10
 isort==6.0.1
 itsdangerous==2.2.0
-jellyfish==1.2.0
+jellyfish==1.2.1
 Jinja2==3.1.6
 kiwisolver==1.4.9
 lib50==3.1.1
