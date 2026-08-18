@@ -1,0 +1,863 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;  
+    width: 100% !important;
+    background: linear-gradient(to right, #bbd6e9 0%, #d4e4f1 50%, #f4f8fb 80%, #f0f5fa 85%, #f0f5fa 100%);
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+* {
+    box-sizing: border-box !important;  
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    background: linear-gradient(to right, #bbd6e9 0%, #d4e4f1 50%, #f4f8fb 80%, #f0f5fa 85%, #f0f5fa 100%);
+    background-color: transparent; 
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+.logo img {
+    height: 80px;  
+    width: auto;
+    transform: scale(4);  
+    transform-origin: right center;  
+    display: block;
+    margin-left: 80px;
+}
+
+.nav-links a {
+    font-family: 'Tajawal', sans-serif;
+    text-decoration: none;
+    /*color: #263c5a;*/
+    color: #000000;
+    margin: 0 15px;
+    font-size: 17px;
+    font-weight: 800px;
+    transition: color 0.3s;
+    position: relative;  
+    text-decoration: none;
+    display: inline-block;
+      
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;  
+    left: 50%;  
+    width: 0;  
+    height: 2px;  
+    background-color: #000;  
+    transition: all 0.2s ease-in-out;  
+    transform: translateX(-50%);  
+}
+ .nav-links a:hover::after {
+    width: 100%; 
+}
+.nav-links a.active::after {
+    width: 100% !important; 
+}
+
+.nav-links:hover a.active::after {
+    width: 0 !important;
+}
+
+.nav-links:hover a:hover::after {
+    width: 100% !important;
+}
+.login-btn a {
+    font-family: 'Tajawal', sans-serif;
+    text-decoration: none;
+    color: #ffca47;  
+    border: 2px solid #ffca47;
+    padding: 6px 50px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    display: inline-block;  
+    margin-right: -90px;
+    font-size: 16px;
+}
+
+.login-btn a:hover {
+    background-color: #e0a31b;
+    border-color: #e0a31b;
+    color: white;
+}
+
+
+
+.menu-toggle, .mobile-menu {
+    display: none;
+}
+.mobile-menu .courses{
+    color: #e0a31b;
+}
+
+ 
+
+/* تنسيق الموبايل */
+ @media (max-width: 768px) {
+    .navbar {
+        padding-bottom: 5px !important;
+    }
+    
+     .navbar .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 25px 0 105px !important;
+        display: flex !important;
+        flex-direction: row-reverse !important; 
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+
+     
+    .navbar .nav-links, 
+    .navbar > .container > .login-btn {
+        display: none !important;
+    }
+    .logo {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .logo img {
+    height: 65px !important;  
+    width: auto !important;
+    margin: 0 !important;
+    
+    
+     
+    transform: scale(2.9) !important; 
+    transform-origin: right center !important; 
+    
+}
+
+
+    /* زر الـ 3 شرطات (☰) */
+    .menu-toggle {
+        display: block !important;
+        font-size: 28px !important;
+        color: #005a70 !important; 
+        cursor: pointer !important;
+        user-select: none !important;
+        margin-top: -6px;
+    }
+
+   
+    .mobile-menu {
+        position: fixed;
+        top: 85px;
+        right: -300px;  
+        width: 270px;  
+        height: 60vh; 
+        background-color: #ffffff; 
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        z-index: 99999; 
+        padding: 25px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        direction: rtl; 
+        border-radius: 2px;
+        margin: 0 !important;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+     
+    .mobile-menu.active {
+        right: 0;
+        margin-right: 0 !important;
+         
+    }
+
+     
+    
+
+
+
+     
+
+   .mobile-menu .close-btn {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;         
+  background: none;       
+  border: none;            
+  padding: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+     
+    .mobile-menu a {
+        display: block !important;
+        font-family: 'Tajawal', sans-serif !important;
+        text-decoration: none !important;
+        color: #000000;
+        font-size: 17px !important;
+        font-weight: 500 !important;
+        text-align: right !important;
+        white-space: nowrap !important;  
+        width: fit-content !important;
+        transition: color 0.3s ease !important;
+        /*margin-top: 10px;*/
+        padding-top: 20px;
+        
+    }
+
+    .mobile-menu a:hover {
+        color: #ffca47 !important; 
+    }
+
+     
+    .mobile-menu .login-btn {
+        margin-top: 15px !important;
+        margin-right: 80px;
+        
+        width: 100% !important;
+    }
+    .mobile-menu .login-btn a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        padding: 11px 0 !important;
+        font-size: 16px !important;
+        color: #ffca47 !important;
+        border: 2px solid #ffca47 !important;
+        border-radius: 25px !important;
+        background-color: transparent !important;
+    }
+    .mobile-menu .login-btn a:hover {
+        background-color: #ffca47 !important;
+        color: #005a70 !important;
+    }
+}
+
+
+
+/* تنسيق الايباد */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar .container {
+        width: 95%;
+        max-width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+         
+    }
+
+    .logo img {
+        height: 60px;        
+        transform: none;      
+        margin-left: 70px;    
+        transform: scale(2.9) !important; 
+    }
+
+    .nav-links {
+        margin-left: 50px;   
+    }
+
+    .nav-links a {
+        font-size: 15px;      
+        margin: 0 10px;
+    }
+
+    .login-btn a {
+        padding: 6px 30px;   
+        font-size: 14px;
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+
+.search-section {
+    
+    padding: 20px 0;            
+    display: flex;
+    justify-content: center;   
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;  
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 60px;
+    margin: 20px auto;
+}
+.search-container:focus-within {
+    border: 1px solid #000;  
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    background: transparent;
+}
+.search-input::placeholder {
+    color: #000 !important;
+    opacity: 1;  
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000;
+    
+}
+
+
+
+
+
+
+
+/*تنسيق الجوال*/
+@media (max-width: 600px) {
+    .search-section {
+        padding-top: 5px !important;  
+        margin-top: -10px !important;  
+    }
+    .search-container {
+        max-width: 90%;        
+        height: 50px;        
+        margin: 10px auto;    
+        padding: 5px 10px;    
+        margin-top: 30px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .search-input {
+        font-size: 14px;     
+    }
+    
+    .search-btn svg {
+        width: 20px;           
+        height: 20px;
+    }
+     
+}
+
+/*تنسيق الايباد*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    .search-container {
+        max-width: 80%;        
+    }
+}
+
+
+
+
+
+
+
+
+
+.hero-section {
+    padding: 50px 20px;
+    text-align: right;
+    direction: rtl;
+}
+
+.content h2 {
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    margin-right: 305px;
+    font-weight: 500;
+    margin-top: -40px;
+}
+
+.content h2 span {
+    color: #ffb71b;
+    font-size: 18px;  
+}
+.content p {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    margin-right: 305px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+.buttons {
+    display: flex;
+    gap: 75px;
+    margin-top: 20px;
+    justify-content: center; 
+    margin-top: 40px;
+}
+
+.btn-solid {
+    background-color: #1f4d8c;
+    color: white;
+    padding: 10px 120px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid #1f4d8c;
+    color: #1f4d8c;
+    padding: 10px 120px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+ 
+.btn-outline:hover {
+    background-color: #1f4d8c;
+    color: white;
+    border: 1.5px solid #1f4d8c; 
+}
+
+ 
+.btn-solid, .btn-outline {
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+/*تنسيق الجوال*/
+@media (max-width: 768px) {
+    .hero-section {
+        margin-top: -10px;
+    }
+    .content h2, .content p {
+        margin-right: 0 !important; 
+        padding-right: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;  
+        gap: 13px;                     
+        align-items: center;
+    }
+
+.btn-solid, .btn-outline {
+    width: 300px !important; 
+    padding: 10px 0 !important; 
+    text-align: center !important; 
+}
+    }
+
+/*تنسيق الايباد*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-section {
+        margin-top: -10px;
+    }
+    .content h2, .content p {
+        margin-right: 90px !important;   
+    }
+
+    .buttons {
+        gap: 20px;                       
+    }
+
+    .btn-solid, .btn-outline {
+        padding: 10px 100px;             
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 60px 0;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  margin-top: -10px;
+}
+
+.service-item {
+  text-align: center;
+  color: #222;
+}
+
+.icon {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.icon svg {
+  width: 80px;
+  height: 80px;
+}
+.service-item p{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+
+/* تنسيق الايباد*/
+@media (max-width: 992px) {
+    .services {
+        gap: 30px;  
+        padding:40px 20px;
+    }
+    .icon {
+        width: 130px;  
+        height: 130px;
+    }
+    .icon svg {
+        width: 60px; 
+        height: 60px;
+    }
+}
+
+/* تنسيق الجوال*/
+@media (max-width: 600px) {
+    .services {
+        flex-direction: column;  
+        align-items: center;
+        gap: 40px;
+        padding: 30px 15px;
+         
+    }
+    
+    .service-item {
+        width: 100%;  
+    }
+
+    .icon {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+
+ 
+
+.section-wrapper {
+    width: 100%;
+    padding-bottom: 80px;
+    
+
+}
+.course-card {
+    width: 100%;
+    max-width: 800px;
+    height: 470px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    direction: rtl;  
+}
+
+.card-media {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.course-card {
+    width: 100%;
+    max-width: 800px;
+    height: 470px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    direction: rtl;
+}
+
+
+/* صورة الدورة */
+.card-media {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+.card-body {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #d4e4f1;
+}
+
+
+.card-body {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #d4e4f1;
+}
+
+.text-section {
+    font-family: 'Tajawal', sans-serif;
+    flex: 2;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-right: 70px;
+    margin-top: -50px;
+
+}
+
+.info-section {
+    flex: 1;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: -50px;
+    font-family: 'Tajawal', sans-serif;
+}
+.info-section p strong{
+    font-weight: 400;
+    font-size: 18px;
+}
+.info-section p {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.course-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffb71b;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    
+    /*الخط*/
+    background-image: linear-gradient(to right, #ffb71b, #ffb71b);
+    background-repeat: no-repeat;
+    background-size: 100% 1.2px; 
+    background-position: 0 88%; 
+    
+    padding-bottom: -2px;
+}
+
+/*تنسيق الجوال*/
+@media (max-width: 600px) {
+    .card-media {
+        height: 220px;
+    }
+
+    .card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .course-card {
+        width: 90%;  
+    max-width: 500px; 
+    margin: 20px auto;
+       height: auto; 
+       
+    }
+
+    .card-body {
+       padding: 15px;  
+        gap: 10px;    
+    }
+
+    .text-section {
+        margin-right: 10px;  
+        margin-top: -20px;
+        font-size: 12px;   
+    }
+
+    .info-section {
+        margin-top: -20px;
+        padding-right: 5px;
+    }
+
+    .info-section p strong, 
+    .info-section p {
+        font-size: 12px;  
+    }
+
+    .course-btn {
+        font-size: 12px;  
+    }
+}
+
+
+
+/* تنسيق الآيباد*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .course-card {
+        max-width: 700px;  
+        height: auto; 
+    }
+
+     
+}
+
+
+
+
+.similar-courses {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /*background-color: #f9f9f9;*/
+    background: linear-gradient(to left, #fffef7 20%, #ffffff 80%);
+    
+  
+}
+
+.section-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    color: #1f4d8c;
+    margin-bottom: 0;
+    align-self: flex-start;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.card-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+    transition: background 0.3s;
+    font-family: 'Tajawal', sans-serif;
+}
+
+
+/*انميشن*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);  
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+}
+
+ 
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);  
+}
+
+
+

@@ -1,0 +1,366 @@
+{% extends "core/layout.html" %}
+{% load static %}
+
+
+{% block head %}
+
+    {{ block.super }}
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{ book.title }} | Zadtech</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="{% static 'books/css/view_book.css' %}"
+        rel="stylesheet"
+    >
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="page-container">
+
+
+    <!-- ==========================================
+         الكتب ذات الصلة
+    =========================================== -->
+
+    <nav class="sidebar">
+
+        <h3>
+            كتب ذات صلة
+        </h3>
+
+
+        {% for related_book in related_books %}
+
+            <a
+                href="{% url 'view_book' related_book.id %}"
+                class="article-item"
+            >
+
+                <span>
+                    {{ related_book.title }}
+                </span>
+
+
+                <span class="icon">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="43.5"
+                        height="43.5"
+                        viewBox="0 0 43.5 43.5"
+                    >
+
+                        <g
+                            transform="translate(-684 -508)"
+                        >
+
+                            <g
+                                transform="translate(684 508)"
+                            >
+
+                                <path
+                                    d="M0,0H17.219"
+                                    transform="translate(3.618 15.406)"
+                                    fill="none"
+                                    stroke="#292d32"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                />
+
+                                <path
+                                    d="M0,0H3.625"
+                                    transform="translate(10.868 29.906)"
+                                    fill="none"
+                                    stroke="#292d32"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                />
+
+                                <path
+                                    d="M0,0H7.25"
+                                    transform="translate(19.024 29.906)"
+                                    fill="none"
+                                    stroke="#292d32"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                />
+
+                                <path
+                                    d="M36.25,15.461v7.4c0,6.362-1.613,7.957-8.048,7.957H8.047C1.613,30.813,0,29.218,0,22.856V7.957C0,1.595,1.613,0,8.047,0H22.656"
+                                    transform="translate(3.618 6.344)"
+                                    fill="none"
+                                    stroke="#292d32"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                />
+
+                                <path
+                                    d="M7.665,1.08.94,7.8A2.361,2.361,0,0,0,.378,8.929L.016,11.5a1.222,1.222,0,0,0,1.45,1.45L4.04,12.59a2.361,2.361,0,0,0,1.124-.562L11.888,5.3c1.16-1.16,1.7-2.5,0-4.205C10.166-.623,8.825-.08,7.665,1.08Z"
+                                    transform="translate(26.911 6.405)"
+                                    fill="none"
+                                    stroke="#292d32"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                />
+
+                            </g>
+
+                        </g>
+
+                    </svg>
+
+                </span>
+
+            </a>
+
+
+        {% empty %}
+
+            <div class="no-related-books">
+
+                <i class="fa-regular fa-folder-open"></i>
+
+                <p>
+                    لا توجد كتب أخرى حالياً
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+
+    </nav>
+
+
+
+    <!-- ==========================================
+         محتوى الكتاب
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- العودة -->
+
+        <div class="back-wrapper">
+
+            <a
+                href="javascript:history.back()"
+                class="back-link"
+            >
+
+                <svg
+                    class="back-icon"
+                    viewBox="0 0 42 42"
+                >
+
+                    <path
+                        d="M0,27.858,11.3,16.391a3.529,3.529,0,0,0,0-4.924L0,0"
+                        transform="translate(15.656 7.071)"
+                        fill="none"
+                        stroke="#292d32"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                    />
+
+                </svg>
+
+                <span class="back-text">
+                    عودة
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             صورة الكتاب
+        =========================================== -->
+
+        <div class="book-image-wrapper">
+
+            {% if book.cover_image %}
+
+                <img
+                    class="display-image"
+                    src="{{ book.cover_image.url }}"
+                    alt="{{ book.title }}"
+                >
+
+            {% else %}
+                <img
+                    class="display-image"
+                    src="{% static 'books/images/book_default.jpg' %}"
+                    alt="{{ book.title }}"
+                >
+            {% endif %}
+
+        </div>
+
+
+
+        <!-- ==========================================
+             معلومات الكتاب
+        =========================================== -->
+
+        <div class="book-information">
+
+
+            <h1 id="display-title">
+
+                {{ book.title }}
+
+            </h1>
+
+
+            <div class="book-meta">
+
+
+                <span>
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    نشر بتاريخ
+
+                    {{ book.published_at|date:"Y/m/d" }}
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Tabs
+            =========================================== -->
+
+            <div class="tabs">
+
+                <span class="active">
+                    الوصف
+                </span>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 الوصف
+            =========================================== -->
+
+            <div class="book-description">
+
+                <p id="display-desc">
+
+                    {{ book.description|linebreaksbr }}
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 أزرار الكتاب
+            =========================================== -->
+
+            <div class="book-actions">
+
+
+                {% if book.book_file %}
+
+
+                    <!-- فتح الكتاب -->
+
+                    <a
+                        href="{{ book.book_file.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="book-action-btn open-book-btn"
+                    >
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        <span>
+                            فتح الكتاب
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- تحميل الكتاب -->
+
+                    <a
+                        href="{{ book.book_file.url }}"
+                        download
+                        class="book-action-btn download-book-btn"
+                    >
+
+                        <i class="fa-solid fa-download"></i>
+
+                        <span>
+                            تحميل الكتاب
+                        </span>
+
+                    </a>
+
+
+                {% else %}
+
+
+                    <div class="book-file-unavailable">
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+
+                        ملف الكتاب غير متوفر حالياً
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+{% endblock body %}

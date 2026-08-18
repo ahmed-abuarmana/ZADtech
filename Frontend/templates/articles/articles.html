@@ -1,0 +1,604 @@
+{% extends "core/layout.html" %}
+{% load static %}
+
+
+{% block head %}
+
+<meta charset="UTF-8" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+/>
+
+<title>Zadtech</title>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+
+<link
+  href="{% static 'articles/css/articles.css' %}"
+  rel="stylesheet"
+/>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+
+<!-- ==================================================
+     القسم العلوي
+================================================== -->
+
+<div class="scene">
+
+
+  <img
+    src="{% static 'articles/images/artical image1jpg.jpg' %}"
+    alt=""
+    class="book-img"
+  />
+
+
+  <div class="container-boxes">
+
+    <div class="item-box box1">
+      <span>كتب فلسفة</span>
+    </div>
+
+    <div class="item-box box2">
+      <span>كتب علمية</span>
+    </div>
+
+    <div class="item-box box3">
+      <span>العديد من الروايات</span>
+    </div>
+
+    <div class="item-box box4">
+      <span>{{ total_articles }} مقال منشور</span>
+    </div>
+
+    <div class="item-box box5">
+      <span>أكثر من 2000 كتاب</span>
+    </div>
+
+  </div>
+
+
+
+  <div class="container-button">
+
+    <a
+      href="{% url 'add_new_article' %}"
+      class="button"
+    >
+      كتابة مقال جديد
+    </a>
+
+  </div>
+
+
+</div>
+
+
+<section class="recent-posts">
+
+
+  <div class="section-header">
+
+    <h2>
+      المنشور مؤخرًا
+    </h2>
+
+    {% comment %}
+    <a
+      href="{% url 'show_all_articles' %}"
+      class="view-all"
+    >
+      عرض الكل
+    </a>
+    {% endcomment %}
+
+  </div>
+
+
+
+  <div class="cards-container">
+
+
+    {% for article in Recently_published_articles %}
+
+
+      <a
+        href="{% url 'view_article' article.id %}"
+        class="card-link"
+      >
+
+
+        <div class="card fade-in">
+
+
+        {% if article.image %}
+
+            <img
+                src="{{ article.image.url }}"
+                alt="{{ article.title }}"
+            >
+
+        {% else %}
+
+            <img
+                src="{% static 'articles/images/articles_default.jpg' %}"
+                alt="{{ article.title }}"
+            >
+
+        {% endif %}
+
+
+          <h3>
+            مقالة {{ article.title }}
+          </h3>
+
+
+          <div class="stars">
+            ★★★★☆
+          </div>
+
+
+        </div>
+
+
+      </a>
+
+
+    {% empty %}
+
+
+      <div class="card fade-in">
+
+        <img
+          src="{% static 'core/images/artical 1.jpg' %}"
+          alt="لا توجد مقالات"
+        />
+
+
+        <h3>
+          لا توجد مقالات منشورة حالياً
+        </h3>
+
+      </div>
+
+
+    {% endfor %}
+
+
+  </div>
+
+
+</section>
+
+
+
+<section class="related-posts">
+
+
+  <h2 class="related-section-title">
+    ذات صلة
+  </h2>
+
+
+
+  <div class="related-cards-wrapper">
+
+
+    {% for article in Related_articles %}
+
+
+      <article class="related-card fade-in">
+
+
+            <img
+                src="{{ article.image.url }}"
+                alt="{{ article.title }}"
+            >
+
+
+
+        <div class="related-card-content">
+
+
+          <div class="card-header">
+
+
+            <h3 class="card-title">
+              مقالة {{ article.title }}
+            </h3>
+
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+
+          </div>
+
+
+
+          <p>
+            {{ article.description|truncatewords:20 }}
+          </p>
+
+
+
+          <p>
+            تاريخ النشر:
+            {{ article.published_at|date:"Y/m/d" }}
+          </p>
+
+
+
+          <div class="related-card-actions">
+
+
+            <button
+              class="btn-primary"
+              onclick="window.location.href='{% url 'view_article' article.id %}'"
+            >
+              عرض المقال
+            </button>
+
+
+            <a
+              href="{% url 'add_new_article' %}"
+              class="btn-secondary"
+            >
+              كتابة مقال اخر
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+    {% empty %}
+
+
+      <article class="related-card fade-in">
+
+
+        <img
+          src="{% static 'core/images/maqal 1.jpg' %}"
+          alt="لا توجد مقالات"
+        >
+
+
+        <div class="related-card-content">
+
+
+          <div class="card-header">
+
+            <h3 class="card-title">
+              لا توجد مقالات إضافية حالياً
+            </h3>
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+    {% endfor %}
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- ==================================================
+     أشهر المؤلفين
+
+     هذا القسم ما زال ثابتاً حالياً
+     لأننا لم ننشئ Model للمؤلفين
+================================================== -->
+
+<section class="authors-section">
+
+
+  <h2 class="section-title">
+    أشهر المؤلفين
+  </h2>
+
+
+
+  <div class="authors-grid">
+
+
+    <div class="author-card fade-in">
+
+
+      <img
+        src="{% static 'articles/images/author_default.jpg' %}"
+        alt="أحمد نادر"
+      />
+
+
+      <h3>
+        أحمد نادر
+      </h3>
+
+
+      <p>
+        سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب
+        الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته
+      </p>
+
+
+      <button
+        class="btn-view"
+        onclick="
+          localStorage.setItem('activeAuthorId', 1);
+          window.location.href = 'Author Profile.html';
+        "
+      >
+        معاينة
+      </button>
+
+
+    </div>
+
+
+
+
+
+    <div class="author-card fade-in">
+
+
+      <img
+        src="{% static 'articles/images/author_default.jpg' %}"
+        alt="غسان كنفاني"
+      />
+
+
+      <h3>
+        غسان كنفاني
+      </h3>
+
+
+      <p>
+        سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب
+        الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته
+      </p>
+
+
+      <button
+        class="btn-view"
+        onclick="
+          localStorage.setItem('activeAuthorId', 2);
+          window.location.href = 'Author Profile.html';
+        "
+      >
+        معاينة
+      </button>
+
+
+    </div>
+
+
+
+
+
+    <div class="author-card fade-in">
+
+
+      <img
+        src="{% static 'articles/images/author_default.jpg' %}"
+        alt="محمود درويش"
+      />
+
+
+      <h3>
+        محمود درويش
+      </h3>
+
+
+      <p>
+        سوري الجنسية، هوايتي الكتابة منذ صغري فقد اقرأ العديد من الروايات والكتب
+        الفلسفية وتعلمت ذلك من أبي رحمه الله واسكنه فسيح جناته
+      </p>
+
+
+      <button
+        class="btn-view"
+        onclick="
+          localStorage.setItem('activeAuthorId', 3);
+          window.location.href = 'Author Profile.html';
+        "
+      >
+        معاينة
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- ==================================================
+     القائمة الخاصة بالموبايل
+================================================== -->
+
+<script>
+
+
+  const menuToggle =
+    document.querySelector(".menu-toggle");
+
+
+  const closeBtn =
+    document.querySelector(".close-btn");
+
+
+  const mobileMenu =
+    document.querySelector(".mobile-menu");
+
+
+
+  // فتح القائمة
+
+  if (menuToggle && mobileMenu) {
+
+    menuToggle.addEventListener(
+      "click",
+      (e) => {
+
+        e.stopPropagation();
+
+        mobileMenu.classList.add(
+          "active"
+        );
+
+      }
+    );
+
+  }
+
+
+
+  // إغلاق القائمة
+
+  if (closeBtn && mobileMenu) {
+
+    closeBtn.addEventListener(
+      "click",
+      (e) => {
+
+        e.stopPropagation();
+
+        mobileMenu.classList.remove(
+          "active"
+        );
+
+      }
+    );
+
+  }
+
+
+
+  // إغلاق القائمة عند الضغط خارجها
+
+  document.addEventListener(
+    "click",
+    (e) => {
+
+      if (
+        mobileMenu &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== menuToggle
+      ) {
+
+        mobileMenu.classList.remove(
+          "active"
+        );
+
+      }
+
+    }
+  );
+
+
+</script>
+
+
+
+
+
+<!-- ==================================================
+     Animation
+================================================== -->
+
+<script>
+
+
+  const observer =
+    new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach(
+          (entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+            }
+
+          }
+        );
+
+      },
+
+      {
+        threshold: 0.1,
+      }
+
+    );
+
+
+
+  document
+    .querySelectorAll(".fade-in")
+    .forEach(
+      (el) => {
+
+        observer.observe(el);
+
+      }
+    );
+
+
+</script>
+
+
+
+{% endblock body %}

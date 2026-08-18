@@ -1,0 +1,220 @@
+{% extends "core/layout.html" %}
+{% load static %}
+
+
+{% block head %}
+
+<title>جميع الدورات | Zadtech</title>
+
+<link
+    href="{% static 'courses/css/all_courses.css' %}"
+    rel="stylesheet"
+>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<h1>
+    جميع الدورات
+</h1>
+
+
+
+<!-- ================= SEARCH ================= -->
+
+<form method="GET">
+
+    <input
+        type="text"
+        name="q"
+        value="{{ query }}"
+        placeholder="ابحث عن دورة تدريبية"
+    >
+
+    <button type="submit">
+        بحث
+    </button>
+
+</form>
+
+
+
+<hr>
+
+
+
+<!-- ================= COURSES ================= -->
+
+{% for course in courses %}
+
+
+    <div class="course-card">
+
+
+        <!-- ================= IMAGE ================= -->
+
+        <div class="image-section">
+
+            {% if course.thumbnail %}
+
+                <a href="{% url 'view_course' course.id %}">
+
+                    <img
+                        src="{{ course.thumbnail.url }}"
+                        alt="{{ course.title }}"
+                    >
+
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'view_course' course.id %}">
+
+                    <img
+                        src="{% static 'courses/images/default_course.jpg' %}"
+                        alt="{{ course.title }}"
+                    >
+
+                </a>
+
+            {% endif %}
+
+        </div>
+
+
+
+        <!-- ================= INFO ================= -->
+
+        <div class="info-section">
+
+
+            <p>
+
+                <strong>
+                    {{ course.title }}
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                تاريخ النشر:
+                {{ course.published_at|date:"Y/m/d" }}
+
+            </p>
+
+
+            <a
+                href="{{ course.link }}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                بدء الدورة
+            </a>
+
+
+        </div>
+
+
+
+        <!-- ================= DETAILS ================= -->
+
+        <div class="text-section">
+
+            <p>
+
+                يمكنك الاطلاع على تفاصيل الدورة
+                والانتقال إلى رابط الدورة من خلال صفحة العرض.
+
+
+                <a href="{% url 'view_course' course.id %}">
+                    عرض المزيد
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+{% empty %}
+
+
+    {% if query %}
+
+        <p>
+            لا توجد دورات مطابقة لبحثك
+            "{{ query }}"
+        </p>
+
+    {% else %}
+
+        <p>
+            لا توجد دورات حالياً
+        </p>
+
+    {% endif %}
+
+
+{% endfor %}
+
+
+
+<!-- ================= PAGINATION ================= -->
+
+{% if courses.paginator.num_pages > 1 %}
+
+
+    <div class="pagination">
+
+
+        {% if courses.has_previous %}
+
+            <a
+                href="?q={{ query|urlencode }}&page={{ courses.previous_page_number }}"
+            >
+                السابق
+            </a>
+
+        {% endif %}
+
+
+
+        <span>
+
+            الصفحة
+            {{ courses.number }}
+
+            من
+
+            {{ courses.paginator.num_pages }}
+
+        </span>
+
+
+
+        {% if courses.has_next %}
+
+            <a
+                href="?q={{ query|urlencode }}&page={{ courses.next_page_number }}"
+            >
+                التالي
+            </a>
+
+        {% endif %}
+
+
+    </div>
+
+
+{% endif %}
+
+
+{% endblock %}
