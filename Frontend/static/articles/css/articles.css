@@ -493,11 +493,13 @@ html, body {
   margin-bottom: 2px;
   color: #2b4a8a;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .stars {
   color: #f7b500;
   font-size: 18px;
+  text-decoration: none;
 }
 
 
