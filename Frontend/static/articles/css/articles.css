@@ -856,22 +856,22 @@ html, body {
 
 
 
-/* إزالة الخط السفلي من جميع الروابط داخل البطاقات في قسم المنشور مؤخرًا */
-.cards-container a.card-link {
-    text-decoration: none !important;
-}
-
-/* إزالة الخط السفلي وتوريث عدم وجوده لأي نص داخل الرابط */
-.cards-container a.card-link h3 {
+ /* إزالة أي حدود أو خطوط تحت الروابط والعناوين في البطاقات */
+.cards-container a, 
+.cards-container a:hover, 
+.cards-container .card h3,
+.cards-container .card-link {
     text-decoration: none !important;
     border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-/* في حال كان هناك تأثير hover يضيف خطاً */
-.cards-container a.card-link:hover {
+/* إجبار النص داخل البطاقة على عدم توريث أي خطوط */
+.card h3 {
     text-decoration: none !important;
+    border: none !important;
 }
-
 /*انميشن*/
 .fade-in {
     opacity: 0;
