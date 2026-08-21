@@ -60,14 +60,7 @@
     width: 100%; 
  }
 
-.nav-links a.active::after {
-    width: 100% !important; 
-}
-
-.nav-links:hover a.active::after {
-    width: 0 !important;
-}
-
+ 
 
 .login-btn a {
     font-family: 'Tajawal', sans-serif;
