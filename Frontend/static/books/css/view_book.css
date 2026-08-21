@@ -109,6 +109,8 @@ body { margin: 0;
     cursor: pointer;
     font-family: 'Tajawal', sans-serif;
     font-size: 16px;
+    text-decoration: none; 
+        color: #000;
 }
 .article-item:hover { border-color: #000; }
 .sidebar .article-item {
