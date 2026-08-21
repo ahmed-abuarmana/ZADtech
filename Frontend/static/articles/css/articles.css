@@ -856,6 +856,16 @@ html, body {
 
 
 
+/* إزالة الخط السفلي من روابط وعناوين البطاقات */
+.cards-container .card-link,
+.cards-container .card-link:hover,
+.cards-container .card h3 {
+    text-decoration: none !important;
+}
+.cards-container .card h3 a {
+    text-decoration: none !important;
+}
+
 /*انميشن*/
 .fade-in {
     opacity: 0;
