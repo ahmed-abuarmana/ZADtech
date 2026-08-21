@@ -366,6 +366,39 @@ textarea.modal-input {
 
 
 
+/* تنسيق أزرار فتح وتحميل الكتاب لإزالة الخط وتحديد الألوان والشكل المطلوب */
+.book-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none !important;
+    color: #fff !important; /* أو اللون الذي ترغبين به للنص والأيقونات داخل الزر */
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* إذا كنتِ تريدين تحديد لون لكل زر على حدة */
+.open-book-btn {
+    background-color: #2f588c; /* لون زر الفتح */
+}
+
+.open-book-btn:hover {
+    background-color: #254670;
+}
+
+.download-book-btn {
+    background-color: #4a5568; /* لون زر التحميل */
+}
+
+.download-book-btn:hover {
+    background-color: #2d3748;
+}
+
+
 
 /* موبايل (أقل من 768px) */
 @media (max-width: 767px) {
