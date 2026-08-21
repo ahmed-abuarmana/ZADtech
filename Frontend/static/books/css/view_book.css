@@ -368,6 +368,54 @@ textarea.modal-input {
 
 
 
+
+
+
+
+/* تنسيق حاوية الأزرار لتظهر بجانب بعضها بشكل متناسق */
+.book-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* تنسيق أزرار فتح وتحميل الكتاب */
+.book-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Almarai', sans-serif;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* لون زر فتح الكتاب */
+.open-book-btn {
+    background-color: #2f588c;
+    color: #fff !important;
+}
+
+.open-book-btn:hover {
+    background-color: #254670;
+}
+
+/* لون زر تحميل الكتاب */
+.download-book-btn {
+    background-color: #f4f4f4;
+    color: #333 !important;
+    border: 1px solid #ddd;
+}
+
+.download-book-btn:hover {
+    background-color: #e2e2e2;
+}
+
+
+
 /* موبايل (أقل من 768px) */
 @media (max-width: 767px) {
       html, body {
