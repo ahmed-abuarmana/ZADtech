@@ -63,7 +63,7 @@
       </div>
       <div class="hero-buttons">
         <a href="#banner-section" class="btn-primary">ابدأ الآن</a>
-        <a href="#" class="btn-secondary">استكمال متابعة</a>
+        <a href="#" id="continueBtn" class="btn-secondary">استكمال متابعة</a>
       </div>
     </div>
   </div>
@@ -263,5 +263,25 @@
     observer.observe(el);
   });
 </script>
+
+
+
+<script>
+    //زر استكمال المتابعة يوديني لاخر صفحة كنت فيها
+  document.getElementById('continueBtn').addEventListener('click', function(e) {
+    e.preventDefault(); 
+    
+    let lastPage = localStorage.getItem('lastPage');
+
+    if (lastPage) {
+      // إذا وجد رابط الصفحة يذهب اليها
+      window.location.href = lastPage;
+    } else {
+      // إذا كان مستخدم جديد يذهب لصفحة تعلم عن الموقع
+      window.location.href = 'learn-about-website.html';
+    }
+  });
+</script>
+
 
 {% endblock body %}
