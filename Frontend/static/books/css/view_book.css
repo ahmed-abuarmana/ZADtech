@@ -112,6 +112,27 @@ body { margin: 0;
     text-decoration: none; 
         color: #000;
 }
+
+
+ 
+.article-item {
+    color: #000 !important;
+}
+
+.article-item span {
+    color: #000 !important;
+}
+
+.article-item:hover, 
+.article-item:hover span {
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+
+
+
+
 .article-item:hover { border-color: #000; }
 .sidebar .article-item {
   display: flex;
