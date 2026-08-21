@@ -60,6 +60,16 @@
     width: 100%; 
  }
 
+/* هذا الكود يجعل الخط يظهر تحت الرابط النشط دائمًا */
+.nav-links a.active::after {
+    width: 100%; /* جعل الخط يظهر كاملاً */
+}
+
+/* اختياري: تغيير لون النص للرابط النشط لتمييزه أكثر */
+.nav-links a.active {
+    color: #ffca47 !important; /* أو أي لون تفضلينه */
+}
+
 .login-btn a {
     font-family: 'Tajawal', sans-serif;
     text-decoration: none;
