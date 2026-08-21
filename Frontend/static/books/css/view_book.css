@@ -372,14 +372,14 @@ textarea.modal-input {
 
 
 
-/* تنسيق حاوية الأزرار لتظهر بجانب بعضها بشكل متناسق */
+ 
 .book-actions {
     display: flex;
     gap: 15px;
     margin-top: 25px;
 }
 
-/* تنسيق أزرار فتح وتحميل الكتاب */
+ 
 .book-action-btn {
     display: inline-flex;
     align-items: center;
@@ -393,7 +393,7 @@ textarea.modal-input {
     transition: 0.3s;
 }
 
-/* لون زر فتح الكتاب */
+ 
 .open-book-btn {
     background-color: #2f588c;
     color: #fff !important;
@@ -403,7 +403,7 @@ textarea.modal-input {
     background-color: #254670;
 }
 
-/* لون زر تحميل الكتاب */
+ 
 .download-book-btn {
     background-color: #f4f4f4;
     color: #333 !important;
