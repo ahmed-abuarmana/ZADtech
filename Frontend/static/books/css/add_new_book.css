@@ -17,15 +17,6 @@
 }
 
 
-.logo img {
-    height: 80px;  
-    width: auto;
-    transform: scale(3.5);  
-    transform-origin: right center;  
-    display: block;
-    margin-right: 1000px;
-    padding-bottom: 15px;
-}
 /* ----- العنوان ----- */
 .post-title {
     text-align: right;
