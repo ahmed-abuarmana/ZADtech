@@ -230,6 +230,11 @@ html {
   overflow: hidden;
   margin-right: 10px;
   margin-top: -50px; 
+
+    overflow: visible;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
  
@@ -301,6 +306,8 @@ html {
   width: 100%;
   text-align: right;
   margin-top: -25px;
+
+    flex-grow: 1;
 }
 
 .hidden {
@@ -324,6 +331,15 @@ html {
     margin-top: -5px;
     font-weight: 500;
     font-size: 14px;
+
+    position: static !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 35px !important; /* هذا هو الهامش السفلي الذي يرفع الزر للأعلى */
+    transform: none !important;
+    left: auto !important;
+    bottom: auto !important;
 }
 
 
