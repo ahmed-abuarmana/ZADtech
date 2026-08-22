@@ -4,35 +4,35 @@
     margin: 0 !important;
 }
 
-  /* هذا الكود يطبق على الجوال والآيباد (أقل من 1024px) */
+  /* هذا الكود للجوال والآيباد فقط (لا يؤثر على اللابتوب نهائياً) */
 @media (max-width: 1024px) {
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        position: relative !important;
     }
 
-    /* 1. إصلاح اللوجو (السبب الأكبر للزوائد بسبب الـ Scale) */
-    .logo, .logo img {
-        transform: none !important; /* إلغاء الـ scale الذي يسبب بروزاً */
-        width: auto !important;
-        height: 50px !important; /* اضبط الارتفاع كما يناسبك */
-        max-width: 100% !important;
+    /* هنا نعدل اللوجو للجوال فقط ليظهر بالحجم الذي تريده دون التأثير على اللابتوب */
+    .logo img {
+        transform: scale(1.5) !important; /* جرب قيمة أقل من 2.9 لتناسب الشاشة */
+        margin-left: 0 !important; 
     }
 
-    /* 2. إصلاح القائمة الجانبية (قد تكون هي المسبب) */
-    .mobile-menu {
-        width: 250px !important; /* قللنا العرض قليلاً */
-        right: -250px !important; 
+    /* التأكد من أن الحاويات لا تتجاوز العرض */
+    .container {
+        width: 95% !important;
     }
+}
 
-    /* 3. التأكد من أن الحاوية لا تتخطى العرض */
-    .container, .navbar .container {
-        width: 90% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
+/* هذا الكود للابتوب والشاشات الكبيرة (يستعيد التنسيق الأصلي بالكامل) */
+@media (min-width: 1025px) {
+    html, body {
+        overflow-x: auto !important; /* يسمح بالتمرير الطبيعي للابتوب */
+    }
+    
+    /* استعادة تنسيق اللوجو الأصلي للابتوب */
+    .logo img {
+        transform: scale(4) !important; /* القيمة التي كنت تستخدمها للابتوب */
+        margin-left: 90px !important;
     }
 }
 .container {
