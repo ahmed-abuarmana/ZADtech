@@ -339,6 +339,8 @@ position: relative;
     left: 50%;          /* لتوسيط الزر أفقياً */
     transform: translateX(-50%); /* لتوسيط الزر بدقة */
     width: 65%;
+    margin-top: auto !important; /* يدفع الزر للأسفل تلقائياً */
+    margin-bottom: 15px;
 }
 
 
