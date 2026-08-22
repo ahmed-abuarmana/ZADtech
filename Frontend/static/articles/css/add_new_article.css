@@ -17,17 +17,7 @@
     background-color: #fff;
     border-radius: 15px; /* إضافة لمسة جمالية */
 }
-/*اللوجو*/
-.logo img {
-    height: 80px; 
-    width: auto;
-    transform: scale(3.5); 
-    transform-origin: right center;  
-    display: block;
-    margin-right: 680px;
-    padding-bottom: 15px;
-}
-
+ 
 /* ----- العنوان ----- */
 .post-title {
     text-align: right;
