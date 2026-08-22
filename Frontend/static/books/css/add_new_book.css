@@ -5,7 +5,7 @@
    كما تم إصلاح مشاكل الخطوط، الأيقونات، والتجاوب.
 */
 * {
-    outline: 1px solid red !important;
+    outline: 1px solid  !important;
 }
 /* ----- الحاوية الرئيسية للصفحة ----- */
 .post-container {
