@@ -7,16 +7,6 @@
     background-color: #fff;
     border-radius: 15px; /* إضافة لمسة جمالية */
 }
-.logo img {
-    height: 80px;  
-    width: auto;
-    transform: scale(3.5); 
-    transform-origin: right center;  
-    display: block;
-    /*margin-right: 1000px;*/
-    margin-left: 0;
-    padding-bottom: 15px;
-}
 
 /* ----- العنوان ----- */
 .post-title {
