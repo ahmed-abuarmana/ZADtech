@@ -1,4 +1,26 @@
- 
+/* الحل الأخير والقاطع لإلغاء أي حركة أفقية نهائياً من الجذور */
+html {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* إيقاف تمدد أي عنصر واحتوائه بالكامل داخل الشاشة */
+div, section, header, footer, nav, main {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+} 
  /* الميديا لحذف الهوامش او الزوائد*/ 
 @media (max-width: 1024px) {
     html, body {
