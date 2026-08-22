@@ -335,12 +335,12 @@ position: relative;
     font-weight: 500;
     font-size: 14px;
     position: absolute;
-    bottom: 15px;       /* المسافة من أسفل الكارد */
-    left: 50%;          /* لتوسيط الزر أفقياً */
-    transform: translateX(-50%); /* لتوسيط الزر بدقة */
+    bottom: 15px;      
+    left: 50%;           
+    transform: translateX(-50%); 
     width: 65%;
-    margin-top: auto !important; /* يدفع الزر للأسفل تلقائياً */
-    margin-bottom: 4px;
+    margin-top: auto !important;  
+    margin-top: 10px;
 }
 
 
