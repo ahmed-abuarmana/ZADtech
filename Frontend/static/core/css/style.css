@@ -1,4 +1,4 @@
- /* 1. منع التمرير الأفقي للصفحة */
+  
 html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -7,7 +7,7 @@ html, body {
     padding: 0 !important;
 }
 
-/* 2. حصر الحاويات الرئيسية والهيدر والفوتر داخل عرض الشاشة بصرامة */
+ 
 header, footer, .navbar, .footer-container, .post-container {
     max-width: 100% !important;
     box-sizing: border-box !important;
