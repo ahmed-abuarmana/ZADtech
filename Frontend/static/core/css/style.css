@@ -3,6 +3,24 @@
     overflow-x: hidden !important;
     margin: 0 !important;
 }
+
+
+/* إجبار الصفحة على عدم التوسع مهما كان السبب */
+html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* إجبار الحاويات الرئيسية على احترام حدود الشاشة */
+.navbar, .main-footer, .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
 .container {
     width: 90%;
     max-width: 1200px;
@@ -446,19 +464,4 @@
 
 
 
-@media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        position: relative !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* هذا الجزء هو الأهم: يجبر أي عنصر على عدم تخطي العرض */
-    * {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-    }
-}
+ 
