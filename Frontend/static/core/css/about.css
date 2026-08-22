@@ -335,12 +335,9 @@ position: relative;
     font-weight: 500;
     font-size: 14px;
     position: absolute;
-    bottom: 15px;      
-    left: 50%;           
-    transform: translateX(-50%); 
-    width: 65%;
-    margin-top: auto !important;  
-    margin-top: 20px;
+    bottom: 10px;                 /* كل ما قللت هذا الرقم (مثلاً 5px أو 0) الزر بينزل لتحت أكتر */
+    left: 50%;                  
+    transform: translateX(-50%);
 }
 
 
