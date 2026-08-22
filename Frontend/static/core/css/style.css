@@ -1,17 +1,8 @@
   
  
-html, body {
-    width: 100% !important;
-    max-width: 100% !important;
+ body {
     overflow-x: hidden !important;
     margin: 0 !important;
-    padding: 0 !important;
-}
-
- 
-header, footer, .navbar, .footer-container, .post-container {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
 }
  
 .container {
