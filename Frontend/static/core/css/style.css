@@ -1,8 +1,21 @@
+ /* إجبار الصفحة وجميع العناصر على عدم تجاوز عرض الشاشة نهائياً */
 html, body {
     width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
     position: relative !important;
+}
+
+/* تطبيق القص الإجباري على كل عنصر في الموقع من كبير لصغير */
+* {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+}
+
+/* منع أي صورة أو جدول أو حاوية من النفخ والمط أفقياً */
+img, video, table, canvas, svg {
+    max-width: 100% !important;
+    height: auto !important;
 }
  /* الميديا لحذف الهوامش او الزوائد*/ 
 @media (max-width: 1024px) {
