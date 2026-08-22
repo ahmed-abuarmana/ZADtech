@@ -4,34 +4,34 @@
     margin: 0 !important;
 }
 
-  /* هذا الكود للجوال والآيباد فقط (لا يؤثر على اللابتوب نهائياً) */
+ /* الميديا لحذف الهوامش او الزوائد*/ 
 @media (max-width: 1024px) {
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
     }
 
-    /* هنا نعدل اللوجو للجوال فقط ليظهر بالحجم الذي تريده دون التأثير على اللابتوب */
+    
     .logo img {
-        transform: scale(1.5) !important; /* جرب قيمة أقل من 2.9 لتناسب الشاشة */
+        transform: scale(1.5) !important;  
         margin-left: 0 !important; 
     }
 
-    /* التأكد من أن الحاويات لا تتجاوز العرض */
+    
     .container {
         width: 95% !important;
     }
 }
 
-/* هذا الكود للابتوب والشاشات الكبيرة (يستعيد التنسيق الأصلي بالكامل) */
+ 
 @media (min-width: 1025px) {
     html, body {
-        overflow-x: auto !important; /* يسمح بالتمرير الطبيعي للابتوب */
+        overflow-x: auto !important; 
     }
     
-    /* استعادة تنسيق اللوجو الأصلي للابتوب */
+  
     .logo img {
-        transform: scale(4) !important; /* القيمة التي كنت تستخدمها للابتوب */
+        transform: scale(4) !important;  
         margin-left: 90px !important;
     }
 }
