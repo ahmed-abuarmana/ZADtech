@@ -1,5 +1,8 @@
 
- 
+  body {
+    overflow-x: hidden !important;
+    margin: 0 !important;
+}
 .container {
     width: 90%;
     max-width: 1200px;
