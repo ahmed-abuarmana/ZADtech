@@ -345,7 +345,7 @@ position: relative;
     transform: translateX(-50%);
     
     position: static !important;
-    margin: 0 auto 25px auto !important;/* رفع الزر*/
+    margin: 0 auto 40px auto !important;/* رفع الزر*/
 }
 
 
