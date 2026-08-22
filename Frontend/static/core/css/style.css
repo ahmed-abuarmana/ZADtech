@@ -4,7 +4,23 @@
     margin: 0 !important;
 }
 
+@media (max-width: 768px) {
+    /* إجبار الصفحة على عدم التوسع للجوال فقط */
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
 
+    /* إجبار جميع العناصر الحاوية على احترام حدود الشاشة */
+    .navbar, .main-footer, .container, .mobile-menu, * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+}
  
 .container {
     width: 90%;
