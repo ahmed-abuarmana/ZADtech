@@ -4,21 +4,27 @@
     margin: 0 !important;
 }
 
+ /* هذا الكود للجوال فقط - بدون تأثير على الكمبيوتر */
 @media (max-width: 768px) {
-    /* إجبار الصفحة على عدم التوسع للجوال فقط */
     html, body {
         width: 100% !important;
-        overflow-x: hidden !important;
+        overflow-x: hidden !important; /* يمنع ظهور شريط التمرير الأفقي */
         margin: 0 !important;
         padding: 0 !important;
-        position: relative !important;
     }
 
-    /* إجبار جميع العناصر الحاوية على احترام حدود الشاشة */
-    .navbar, .main-footer, .container, .mobile-menu, * {
+    /* نحدد العناصر المسببة للمشكلة فقط بدلاً من النجمة (*) */
+    .navbar, .container, .main-footer {
         max-width: 100% !important;
-        box-sizing: border-box !important;
         overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* إضافة حماية للكمبيوتر لضمان عدم تأثره */
+@media (min-width: 769px) {
+    html, body {
+        overflow-x: auto !important; /* يعيد الوضع الطبيعي للكمبيوتر */
     }
 }
  
