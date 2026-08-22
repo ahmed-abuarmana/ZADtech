@@ -1,9 +1,6 @@
  
 
-  body {
-    overflow-x: hidden !important;
-    margin: 0 !important;
-}
+  
 
  /* الميديا لحذف الهوامش او الزوائد*/ 
 @media (max-width: 1024px) {
