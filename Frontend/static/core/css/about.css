@@ -344,7 +344,7 @@ position: relative;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-top: 0 !important;
-    margin-bottom: 35px !important; /* هذا هو الهامش السفلي الذي يرفع الزر للأعلى */
+    margin-bottom: 35px !important;  /*رفع الزر لاعلى*/
     transform: none !important;
     left: auto !important;
     bottom: auto !important; 
