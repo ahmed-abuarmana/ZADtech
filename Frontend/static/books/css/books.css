@@ -168,7 +168,8 @@ html {
   .tabs {
     flex-direction: row;        
     gap: 3px;                 
-    margin-left: 0px;            
+   /* margin-left: 0px;  */
+      margin-right: 50px;
   }
 
   .tab-btn, .add-btn {
