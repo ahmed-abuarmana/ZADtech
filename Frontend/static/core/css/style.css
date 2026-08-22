@@ -1,9 +1,16 @@
- /* --- الحل النظيف لمنع التمرير الأفقي فقط --- */
+ /* 1. منع التمرير الأفقي للصفحة */
 html, body {
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     overflow-x: hidden !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* 2. حصر الحاويات الرئيسية والهيدر والفوتر داخل عرض الشاشة بصرامة */
+header, footer, .navbar, .footer-container, .post-container {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
  
