@@ -1,9 +1,16 @@
-html, body {
-    width: 100%;
+ /* 1. إصلاح شامل لأي عنصر يتجاوز الشاشة */
+* {
     max-width: 100%;
-    overflow-x: hidden !important;
+    box-sizing: border-box;
+}
+
+/* 2. تصحيح مشكلة اللوجو الذي يخرج عن العرض بسبب الـ scale الضخم */
+.logo img, .footer-logo img {
+    transform: none !important; /* إلغاء الـ scale المدمر للتصميم */
+    height: 55px !important;    /* التحكم بالارتفاع الحقيقي مباشرة */
+    width: auto !important;
+    max-width: none !important;
     margin: 0 !important;
-    padding: 0 !important;
 }
 .container {
     width: 90%;
