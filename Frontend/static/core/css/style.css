@@ -5,22 +5,7 @@
 }
 
 
-/* إجبار الصفحة على عدم التوسع مهما كان السبب */
-html, body {
-    width: 100% !important;
-    overflow-x: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative !important;
-}
-
-/* إجبار الحاويات الرئيسية على احترام حدود الشاشة */
-.navbar, .main-footer, .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
+ 
 .container {
     width: 90%;
     max-width: 1200px;
