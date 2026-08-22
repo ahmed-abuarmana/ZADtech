@@ -332,11 +332,8 @@ html {
     font-weight: 500;
     font-size: 14px;
 
-    position: static !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 0 !important;
-    margin-bottom: 35px !important; /* هذا هو الهامش السفلي الذي يرفع الزر للأعلى */
+   position: static !important;
+    margin: 0 auto 35px auto !important; 
     transform: none !important;
     left: auto !important;
     bottom: auto !important;
