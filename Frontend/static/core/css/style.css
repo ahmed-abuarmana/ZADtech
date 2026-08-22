@@ -4,26 +4,35 @@
     margin: 0 !important;
 }
 
- /* حل الزوائد للجوال فقط */
-@media (max-width: 768px) {
-    /* 1. منع التمرير الأفقي تماماً على مستوى الصفحة */
+  /* هذا الكود يطبق على الجوال والآيباد (أقل من 1024px) */
+@media (max-width: 1024px) {
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
         position: relative !important;
     }
 
-    /* 2. فرض العرض على كافة العناصر في الصفحة (بدون التأثير على التنسيق) */
-    * {
+    /* 1. إصلاح اللوجو (السبب الأكبر للزوائد بسبب الـ Scale) */
+    .logo, .logo img {
+        transform: none !important; /* إلغاء الـ scale الذي يسبب بروزاً */
+        width: auto !important;
+        height: 50px !important; /* اضبط الارتفاع كما يناسبك */
         max-width: 100% !important;
-        box-sizing: border-box !important;
     }
-}
 
-/* 3. ضمان عدم تأثر شاشات الكمبيوتر والآيباد */
-@media (min-width: 769px) {
-    html, body {
-        overflow-x: visible !important;
+    /* 2. إصلاح القائمة الجانبية (قد تكون هي المسبب) */
+    .mobile-menu {
+        width: 250px !important; /* قللنا العرض قليلاً */
+        right: -250px !important; 
+    }
+
+    /* 3. التأكد من أن الحاوية لا تتخطى العرض */
+    .container, .navbar .container {
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
     }
 }
 .container {
