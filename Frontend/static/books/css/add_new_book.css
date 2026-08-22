@@ -118,11 +118,11 @@
 }
 
 .input-field {
-    height: 55px;
+    height: 50px;
 }
 
 .textarea-field {
-    height: 190px;
+    height: 180px;
     resize: none;
 }
 
