@@ -160,6 +160,9 @@ html {
 .add-btn .plus {
   color: #224c89;  
 }
+.tab-btn.active::after, .tab-btn.active::before {
+    display: none !important;
+}
 
 /* للجوال */
 @media (max-width: 767px) {
