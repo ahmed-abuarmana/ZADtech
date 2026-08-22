@@ -4,7 +4,12 @@
    تم إلغاء جميع محاولات إعادة تنسيق الهيدر (مثل اللوجو) للاعتماد كليًا على ملف style.css.
    كما تم إصلاح مشاكل الخطوط، الأيقونات، والتجاوب.
 */
-  
+ html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+} 
 /* ----- الحاوية الرئيسية للصفحة ----- */
 .post-container {
     max-width: 900px;
