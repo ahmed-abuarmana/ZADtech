@@ -4,30 +4,28 @@
     margin: 0 !important;
 }
 
- /* هذا الكود للجوال فقط - بدون تأثير على الكمبيوتر */
+ /* حل الزوائد للجوال فقط */
 @media (max-width: 768px) {
+    /* 1. منع التمرير الأفقي تماماً على مستوى الصفحة */
     html, body {
+        overflow-x: hidden !important;
         width: 100% !important;
-        overflow-x: hidden !important; /* يمنع ظهور شريط التمرير الأفقي */
-        margin: 0 !important;
-        padding: 0 !important;
+        position: relative !important;
     }
 
-    /* نحدد العناصر المسببة للمشكلة فقط بدلاً من النجمة (*) */
-    .navbar, .container, .main-footer {
+    /* 2. فرض العرض على كافة العناصر في الصفحة (بدون التأثير على التنسيق) */
+    * {
         max-width: 100% !important;
-        overflow-x: hidden !important;
         box-sizing: border-box !important;
     }
 }
 
-/* إضافة حماية للكمبيوتر لضمان عدم تأثره */
+/* 3. ضمان عدم تأثر شاشات الكمبيوتر والآيباد */
 @media (min-width: 769px) {
     html, body {
-        overflow-x: auto !important; /* يعيد الوضع الطبيعي للكمبيوتر */
+        overflow-x: visible !important;
     }
 }
- 
 .container {
     width: 90%;
     max-width: 1200px;
