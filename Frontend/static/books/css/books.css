@@ -118,6 +118,8 @@ html {
   margin: 30px 0;
   margin-top: -10px;
   margin-left: 431px !important;
+  margin: 20px auto; 
+  flex-wrap: wrap;
 }
 .tab-btn {
   border: 1px solid #777;
