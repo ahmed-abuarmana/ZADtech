@@ -69,3 +69,21 @@
         }
     });
 </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // تحديد جميع روابط القائمة الرئيسية وقائمة الجوال
+    const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            // إزالة الكلاس النشط من جميع الروابط
+            navLinks.forEach(item => item.classList.remove("active-link"));
+            
+            // إضافة الكلاس النشط للرابط الذي تم الضغط عليه فقط
+            this.classList.add("active-link");
+        });
+    });
+});
+  </script>
