@@ -119,11 +119,7 @@
     display: none;
 }
 
-/*خط*/
- .nav-links a.clicked-active::after {
-    width: 100% !important;
-    background-color: #ffca47 !important;
-}
+ 
 
 /* للموبايل */
  @media (max-width: 768px) {
