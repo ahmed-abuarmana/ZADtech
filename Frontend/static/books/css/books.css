@@ -111,25 +111,16 @@ html {
 
 
 
-/*  .tabs {
+  .tabs {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 30px 0;
   margin-top: -10px;
   margin-left: 431px !important;
-}*/
-.tabs {
-    display: flex !important;
-    flex-direction: row-reverse !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 12px !important;
-    margin: 20px auto !important;
-    padding: 0 10px !important;
-    width: 100% !important;
 }
-/*.tab-btn {
+ 
+.tab-btn {
   border: 1px solid #777;
   background: #fff;
   color: #000000;
@@ -141,7 +132,7 @@ html {
   font-weight: 500;
   font-size: 14px;
   text-decoration: none;
-}*/
+}
 
 .tab-btn.active {
   background: #1f4b8c;
@@ -150,7 +141,7 @@ html {
   font-family: 'Tajawal', sans-serif;
   font-weight: 500;
 }
-/*.add-btn {
+.add-btn {
   background: #e9efff;
   color: #1f4b8c;
   border: 1px solid #1f4b8c;
@@ -161,41 +152,8 @@ html {
   width: 180px;       
   text-align: center;
   text-decoration: none;
-}*/
-.tabs .tab-btn, 
-.tabs .add-btn {
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    border-radius: 50px !important;
-    padding: 10px 25px !important;
-    font-size: 14px !important;
-    font-family: 'Tajawal', sans-serif !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
 }
-/* زر الكتب النشط */
-.tabs .tab-btn {
-    background: #1f4b8c !important;
-    color: #fff !important;
-    border: 1px solid #1f4b8c !important;
-}
-
-/* زر نشر كتاب جديد */
-.tabs .add-btn {
-    background: #e9efff !important;
-    color: #1f4b8c !important;
-    border: 1px solid #1f4b8c !important;
-}
-
-
-
-
-
-
+ 
 
 .add-btn:hover {
   background: #dbe4ff;
