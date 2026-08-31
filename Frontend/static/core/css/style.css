@@ -119,12 +119,11 @@
     display: none;
 }
 
-
-/* اللون الأصفر عند الضغط أو التحديد */
-.nav-links a.active-link,
-.mobile-menu a.active-link {
-    color: #ffca47 !important;
-} 
+/*خط*/
+ .nav-links a.clicked-active::after {
+    width: 100% !important;
+    background-color: #ffca47 !important;
+}
 
 /* للموبايل */
  @media (max-width: 768px) {
